@@ -88,7 +88,10 @@ always @ (posedge clk)
   assign MemRead = ((state == state0) || (state == state3));
 assign MemWrite = (state == state5);
 
-  assign ALUSrcA = ((state != state0) || (state != state1) || (state == state2) || (state == state6) || (state == state8));
+  assign ALUSrcA = (state == state0) || (state == state1) ? 1'b0:
+    				(state == state2) || (state == state6) || (state == state8) ? 							1'b1:
+    				1'b0;
+  
   assign IorD = ((state != state0) || (state == state3) || (state == state5));
 
 assign IRWrite = (state == state0);
