@@ -2,6 +2,8 @@ module ALUControl(
 input [6:0] funct7,
 input [2:0] funct3,
 input [1:0] ALUOp,
+input reset, 
+
 output [3:0] control
 
 );
@@ -9,7 +11,10 @@ output [3:0] control
 
     always @ (*)
         begin
-            if(ALUOp == 2'b00)
+            if(reset)
+                control = 0;
+
+            else if(ALUOp == 2'b00)
                 control = 4'b0010;
             else if(ALUOp == 2'b01)
                 control = 4'b0110;
