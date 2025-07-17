@@ -4,7 +4,7 @@ module memory(
     input memRead,
     input memWrite,
     input clk,
-    input reset
+    input reset,
     output reg [31:0] memData
 );
 
@@ -14,7 +14,8 @@ module memory(
     begin
        if(reset)
        begin
-            for(i = 0, i < 64, i++)
+         	integer i;
+         	for(i = 0; i < 64; i = i + 1)
                 data[i] <= 32'b0;
        end
 
