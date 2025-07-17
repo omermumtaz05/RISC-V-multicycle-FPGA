@@ -3,24 +3,24 @@ module FSM(
     input reset,
     input [6:0] opcode,
 
-    output reg RegWrite,
-    output reg ALUSrcA,
-    output reg MemRead,
-    output reg MemWrite,
-    output reg MemtoReg,
-    output reg IorD,
-    output reg IRWrite, 
-    output reg PCWrite,
-    output reg PCWriteCond,
-    output reg PCSource,
+    output RegWrite,
+    output ALUSrcA,
+    output MemRead,
+    output MemWrite,
+    output MemtoReg,
+    output IorD,
+    output IRWrite, 
+    output PCWrite,
+    output PCWriteCond,
+    output PCSource,
 
-    output reg [1:0] ALUOp,
-    output reg [1:0] ALUSrcB,
+    output [1:0] ALUOp,
+    output [1:0] ALUSrcB
 
 );
 
 parameter state0 = 4'b0000, state1 = 4'b0001, state2 = 4'b0010, state3 = 4'b0011,
-            state4 = 4'b0100, state5 = 4'b0101, state6 = 4'b0110, state7 = 4'b0111,
+            state4 = 4'b0100, state5 = 4'b0101, state6 = 4'b0110, state7 =4'b0111,
             state8 = 4'b1000;
 
 reg [3:0] state, next_state;
@@ -85,11 +85,11 @@ always @ (posedge clk)
         state <= next_state;
 
 //1-bit control signals
-assign MemRead = (state == state0 || state == state3);
+  assign MemRead = ((state == state0) || (state == state3));
 assign MemWrite = (state == state5);
 
-assign ALUSrcA = (state != state0 || state != state1 || state == state2 || state == state6 || state == state8);
-assign IorD = (state != state0 || state == state3 || state == state5);
+  assign ALUSrcA = ((state != state0) || (state != state1) || (state == state2) || (state == state6) || (state == state8));
+  assign IorD = ((state != state0) || (state == state3) || (state == state5));
 
 assign IRWrite = (state == state0);
 
@@ -97,20 +97,22 @@ assign PCWrite = (state == state0);
 
 assign PCWriteCond = (state == state8);
 
-assign RegWrite = (state == state4 || state == state7);
+  assign RegWrite = ((state == state4) || (state == state7));
 
-assign MemToReg = (state == state4 || state != state7);
+  assign MemtoReg = ((state == state4) || (state != state7));
 
-assign PCSource = (state != state0 || state == state8);
+  assign PCSource = ((state != state0) || (state == state8));
 
 //2-bit control signals
-assign ALUOp = (state == state0 || state == state1 || state == state2) ? 2'b00:
+  assign ALUOp = ((state == state0) || (state == state1) || (state == state2)) ? 2'b00:
                (state == state6) ? 2'b10:
-               (state == state8) ? 2'b01;
+    			(state == state8) ? 2'b01:
+    			2'b00;
 
 assign ALUSrcB = (state == state0) ? 2'b01:
                  (state == state1 || state == state2) ? 2'b10:
-                 (state == state6 || state == state8) ? 2'b00;
+  				(state == state6 || state == state8) ? 2'b00:
+  				2'b00;
 
 
 
