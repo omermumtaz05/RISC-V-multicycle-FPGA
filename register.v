@@ -5,6 +5,7 @@ module register(
     input [31:0] writeData,
     input regWrite,
     input clk,
+  	input reset,
 
     output reg [31:0] readData1,
     output reg [31:0] readData2
@@ -12,14 +13,26 @@ module register(
 
     reg [31:0] RF [31:0]; // 32 registers each carrying 32 bits of data each
 
+  
+    always @ (posedge clk)
+      if(reset)
+        begin
+        integer i;
+  		
+        for (i = 0; i < 32;  i = i + 1)
+          RF[i] = 32'b0;
+  
+        end
+        	
+       else if(regWrite & writeReg != 0)
+            RF[writeReg] <= writeData;
+
     always @ (*)
         begin
             readData1 = RF[readReg1];
             readData2 = RF[readReg2];
         end
-    always @ (posedge clk)
-        if(regWrite & writeReg != 0)
-            RF[writeReg] <= writeData;
+  
 
 
 
