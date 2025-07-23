@@ -1,4 +1,3 @@
-// Code your design here
 module top_module(clock, reset);
 
       input wire clock;
@@ -38,7 +37,12 @@ module top_module(clock, reset);
         PC_mux pc_mux_inst (PCSource, ALUOut, ALUResult, M4);
         B_mux b_mux_inst (ALUSrcB, B, Imm3, M5);
 
-        
+        FSM fsm_inst (
+            clock, reset, IR_out[6:0]
+            ,regWrite, ALUSrcA, memRead, memWrite,MemtoReg, IorD, IRWrite, PCWrite, PCWriteCond,PCSource,
+            ALUOp,ALUSrcB
+        );
+  
         //functional units and temp regs datapath
 
   		ProgramCounter PC_INST (PCcontrol, M4, clock, reset, PC);  
