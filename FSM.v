@@ -1,3 +1,4 @@
+
 module FSM(
     input clk,
     input reset,
@@ -92,7 +93,10 @@ assign MemWrite = (state == state5);
     				(state == state2) || (state == state6) || (state == state8) ? 							1'b1:
     				1'b0;
   
-  assign IorD = ((state != state0) || (state == state3) || (state == state5));
+  assign IorD = ((state == state0) ? 1'b0:
+		 (state == state3) || (state == state5)) ? 1'b1:
+		1'b0;
+
 
 assign IRWrite = (state == state0);
 
@@ -102,9 +106,13 @@ assign PCWriteCond = (state == state8);
 
   assign RegWrite = ((state == state4) || (state == state7));
 
-  assign MemtoReg = ((state == state4) || (state != state7));
+  assign MemtoReg = (state == state7) ? 1'b0:
+		(state == state4) ? 1'b1:
+		1'b0;
 
-  assign PCSource = ((state != state0) || (state == state8));
+  assign PCSource = (state == state0) ? 1'b0: 
+					(state == state8) ? 1'b1:
+					1'b0;
 
 //2-bit control signals
   assign ALUOp = ((state == state0) || (state == state1) || (state == state2)) ? 2'b00:
