@@ -93,8 +93,8 @@ assign MemWrite = (state == state5);
     				(state == state2) || (state == state6) || (state == state8) ? 							1'b1:
     				1'b0;
   
-  assign IorD = ((state == state0) ? 1'b0:
-		 (state == state3) || (state == state5)) ? 1'b1:
+  assign IorD = (state == state0) ? 1'b0:
+		 (state == state3) || (state == state5) ? 1'b1:
 		1'b0;
 
 
