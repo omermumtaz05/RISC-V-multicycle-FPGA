@@ -1,3 +1,4 @@
+
 // Code your testbench here
 // or browse Examples
 
@@ -67,10 +68,10 @@ initial begin
   
   $display("ALUSrcA is %d, ALUSrcB is %d, ALUOp is %d", ALUSrcA, ALUSrcB, ALUOp); 
   
-  #10
+  //#10
   //STATE 6 (taking R-type path)
 
-  opcode = 7'b0110011; //sw opcode
+  opcode = 7'b0110011; 
     
   #10 //check state 6 outputs
    
@@ -86,8 +87,8 @@ initial begin
   $display("Memread is %d, ALUSrcA is %d, IorD is %d, IRWrite is %d, ALUSrcB is %d, ALUOp is %d, PCWrite is %d, PCSource is %d", MemRead, ALUSrcA, IorD, IRWrite, ALUSrcB, ALUOp, PCWrite, PCSource); 
            
            
-           
-  $finish;
+   #10 $stop;      
+
 end
 
 
