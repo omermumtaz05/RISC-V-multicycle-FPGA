@@ -67,12 +67,12 @@ initial begin
   
   $display("ALUSrcA is %d, ALUSrcB is %d, ALUOp is %d", ALUSrcA, ALUSrcB, ALUOp); 
   
-  #10
-  //STATE 8 (taking beq path)
+
+  //set opcode
 
   opcode = 7'b1100111; //sw opcode
     
-  #10 //check state 8 outputs
+  #10 //check state 8 outputs and go to state 8
    
   $display("ALUSrcA is %d, ALUSrcB is %d, ALUOp is %d, PCWriteCond is %d, PCSource is %d", ALUSrcA, ALUSrcB, ALUOp, PCWriteCond, PCSource); 
 
@@ -81,8 +81,8 @@ initial begin
   $display("Memread is %d, ALUSrcA is %d, IorD is %d, IRWrite is %d, ALUSrcB is %d, ALUOp is %d, PCWrite is %d, PCSource is %d", MemRead, ALUSrcA, IorD, IRWrite, ALUSrcB, ALUOp, PCWrite, PCSource); 
            
            
-           
-  $finish;
+  #10 $stop;        
+ 
 end
 
 
