@@ -1,3 +1,4 @@
+
 // Code your testbench here
 // or browse Examples
 
@@ -53,6 +54,7 @@ module FSM_tb();
 
   // Test sequence
 initial begin
+
   reset = 1;
   
   #10
@@ -64,8 +66,9 @@ initial begin
 
   #10
   //STATE 1 (only outputs are ALUSrcA, ALUSrcB and ALUOp
+    $display("ALUSrcA is %d, ALUSrcB is %d, ALUOp is %d", ALUSrcA, ALUSrcB, ALUOp); 
+
   
-  $display("ALUSrcA is %d, ALUSrcB is %d, ALUOp is %d", ALUSrcA, ALUSrcB, ALUOp); 
   
   #10
   //STATE 2 (taking LW path)
@@ -73,22 +76,26 @@ initial begin
   opcode = 7'b0000011; //lw opcode
     
   #10 //check state 2 outputs
-   
-  $display("ALUSrcA is %d, ALUSrcB is %d, ALUOp is %d", ALUSrcA,     	ALUSrcB, ALUOp); 
+     $display("ALUSrcA is %d, ALUSrcB is %d, ALUOp is %d", ALUSrcA,     	ALUSrcB, ALUOp); 
+
+  
 
   #10 opcode = 7'b0000011; 
   // continute cycle for lw -> checking state 3 outputs
-  $display("Memread is %d, IorD is %d", MemRead, IorD); 
-  
+	$display("Memread is %d, IorD is %d", MemRead, IorD); 
+ 
   #10 
+  //state 4
   $display("RegWrite is %d, MemtoReg is %d", RegWrite, MemtoReg); 
 
+
   #10
+       //state 5  
   $display("Memread is %d, ALUSrcA is %d, IorD is %d, IRWrite is %d, ALUSrcB is %d, ALUOp is %d, PCWrite is %d, PCSource is %d", MemRead, ALUSrcA, IorD, IRWrite, ALUSrcB, ALUOp, PCWrite, PCSource); 
+    
            
-           
-           
-  $finish;
+   #10 $stop;         
+  //$finish;
 end
 
 
