@@ -29,7 +29,7 @@ reg [3:0] state, next_state;
 parameter LW = 7'b0000011,
           SW = 7'b0100011,
           R_type = 7'b0110011,
-          BEQ = 7'b1100111;
+          BEQ = 7'b1100011;
 
     // State transition logic
 always @ (*)
