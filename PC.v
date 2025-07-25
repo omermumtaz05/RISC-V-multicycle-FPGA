@@ -8,7 +8,7 @@ module ProgramCounter(
 
   always @ (posedge clk)
     if(reset)
-      pc <= 32'b0
+      pc <= 32'b0;
     else if(PCWrite)
       pc <= next_pc;
     
