@@ -2,6 +2,8 @@
 // or browse Examples
 // Code your testbench here
 // or browse Examples
+// Code your testbench here
+// or browse Examples
 module memory_tb();
   
   //Inputs declared as regs
@@ -46,10 +48,10 @@ module memory_tb();
     #10 writeData = 32'd200; address = 32'd3; memWrite = 1;
     	memRead = 0;
     
-    	// store decimal 200 into register 2
+    	// store decimal 200 into address 2
     
     #10 memRead = 1; address = 32'd3;
-    	//store decimal 10 into register 5
+    	//store decimal 10 into address 5
     
     #10 $display("memData=%d", memData);
     
@@ -61,6 +63,37 @@ module memory_tb();
     	//store decimal 10 into register 5
     
     #10 $display("memData=%d", memData);
+    
+    #10 writeData = 20'b10110111001011011101; address = 32'd20; memWrite = 1;
+    	memRead = 0;
+    
+    #10 memRead = 1; address = 32'd20;
+    	//store decimal 10 into register 5
+    
+    #10 $display("memData=%d", memData);
+    
+        #10 writeData = 32'hFFFFFFFE; address = 32'd30; memWrite = 1;
+    	memRead = 0;
+    
+   // #10 memRead = 1; address = 32'd30;
+
+    
+  //  #10 $display("memData=%d", memData);
+    
+    //  #10 memRead = 1; address = 32'd33;
+
+    
+    
+  //  #10 $display("memData=%d", memData);
+    
+    #10 memRead = 1; address = 32'd30;
+	#1 $display("Read at 30 memData = %h", memData);
+    $display("Bytes 30-33: %h %h %h %h", uut.data[30], uut.data[31], 			uut.data[32], uut.data[33]);
+
+    #10 memRead = 1; address = 32'd33;
+    #1 $display("Read at 33 memData = %h", memData);
+    $display("Bytes 33-36: %h %h %h %h", uut.data[33], uut.data[34], 			uut.data[35], uut.data[36]);
+
     
     #10 $finish;
     
