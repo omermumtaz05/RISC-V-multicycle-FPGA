@@ -18,7 +18,11 @@ module imm_gen(
 
             7'b1100011:
       
-  		 		imm = {{19{inst[31]}}, inst[7], inst[30:25], inst[11:8], 1'b0};
+  		 		    imm = {{19{inst[31]}}, inst[7], inst[30:25], inst[11:8], 1'b0};
+
+            default:
+            
+                imm = 32'b0;
 
         endcase
 
