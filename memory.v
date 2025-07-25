@@ -8,28 +8,33 @@ module memory(
     output reg [31:0] memData
 );
 
-    reg [31:0] data [63:0];
+    reg [7:0] data [255:0];
 
     always @ (posedge clk)
     begin
        if(reset)
        begin
          	integer i;
-         	for(i = 0; i < 64; i = i + 1)
-                data[i] <= 32'b0;
+         	for(i = 0; i < 256; i = i + 1)
+                data[i] <= 8'b0;
        end
 
        else if(memWrite)
-            data[address] <= writeData;
+       begin
+            data[address] <= writeData[7:0];
+            data[address + 1] <= writeData[15:8];
+            data[address + 2] <= writeData[23:16];
+            data[address + 3] <= writeData[31:24];
+       end
     end
 
     always @ (*)
         if(memRead)
-            memData = data[address];
+            memData = {data[address + 3], data[address + 2], data[address + 1], data[address]};
         else
             memData = 32'b0;
 
 
 endmodule
 
-//VERIFY
+//VERIFY AGAIN
