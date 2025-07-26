@@ -1,3 +1,4 @@
+
 module ALU(
     input [31:0] A,
     input [31:0] B,
@@ -56,13 +57,13 @@ module memory(
 );
 
     reg [7:0] data [255:0];
-
+    integer i;
     always @ (posedge clk)
     begin
        if(reset)
        begin
-         	integer i;
-         	for(i = 0; i < 256; i = i + 1)
+         	
+         	for(i = 128; i < 256; i = i + 1)
                 data[i] <= 8'b0;
        end
 
@@ -101,11 +102,10 @@ module register(
 
     reg [31:0] RF [31:0]; // 32 registers each carrying 32 bits of data each
 
-  
+    integer i;
     always @ (posedge clk)
       if(reset)
         begin
-        integer i;
   		
         for (i = 0; i < 32;  i = i + 1)
           RF[i] = 32'b0;
