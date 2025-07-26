@@ -1,3 +1,4 @@
+// Code your design here
 
 module FSM(
     input clk,
@@ -22,15 +23,16 @@ module FSM(
 
 parameter state0 = 4'b0000, state1 = 4'b0001, state2 = 4'b0010, state3 = 4'b0011,
             state4 = 4'b0100, state5 = 4'b0101, state6 = 4'b0110, state7 =4'b0111,
-            state8 = 4'b1000;
+            state8 = 4'b1000, state9 = 4'b1001;
 
 reg [3:0] state, next_state;
 
 parameter LW = 7'b0000011,
           SW = 7'b0100011,
           R_type = 7'b0110011,
-          BEQ = 7'b1100011;
-
+          BEQ = 7'b1100011,
+	      ADDI = 7'b0010011;
+  
     // State transition logic
 always @ (*)
     case(state)
@@ -40,7 +42,7 @@ always @ (*)
 
             state1:
                 begin
-                    if(opcode == LW || opcode == SW)
+                    if(opcode == LW || opcode == SW || opcode == ADDI)
                         next_state = state2;
 
                     else if(opcode == R_type)
@@ -56,6 +58,8 @@ always @ (*)
                         next_state = state3;
                     else if(opcode == SW)
                         next_state = state5;
+                    else if(opcode == ADDI)
+                        next_state = state9;
                 end
 
             state3:
@@ -74,6 +78,8 @@ always @ (*)
                 next_state = state0;
 
             state8:
+                next_state = state0;
+            state9:
                 next_state = state0;
             
   	endcase
@@ -104,9 +110,9 @@ assign PCWrite = (state == state0);
 
 assign PCWriteCond = (state == state8);
 
-  assign RegWrite = ((state == state4) || (state == state7));
+  assign RegWrite = ((state == state4) || (state == state7) || state == state9);
 
-  assign MemtoReg = (state == state7) ? 1'b0:
+  assign MemtoReg = (state == state7 || state == state9) ? 1'b0:
 		(state == state4) ? 1'b1:
 		1'b0;
 
