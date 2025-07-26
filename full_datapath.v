@@ -57,6 +57,15 @@ module memory(
 );
 
     reg [7:0] data [255:0];
+
+    initial begin
+	data[0] = 8'h93;
+	data[1] = 8'h01;
+	data[2] = 8'h40;
+	data[3] = 8'h01;
+    end
+
+
     integer i;
     always @ (posedge clk)
     begin
