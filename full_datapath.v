@@ -1,4 +1,5 @@
 
+
 module ALU(
     input [31:0] A,
     input [31:0] B,
@@ -63,6 +64,10 @@ module memory(
 	data[1] = 8'h01;
 	data[2] = 8'h40;
 	data[3] = 8'h01;
+	// lw x8, 120(x3)
+	
+
+	data[140] = 8'd82;
     end
 
 
