@@ -17,7 +17,8 @@ module FSM(
     output PCSource,
 
     output [1:0] ALUOp,
-    output [1:0] ALUSrcB
+	output [1:0] ALUSrcB,
+	output [3:0] state_output
 
 );
 
@@ -131,6 +132,7 @@ assign ALUSrcB = (state == state0) ? 2'b01:
   				(state == state6 || state == state8) ? 2'b00:
   				2'b00;
 
+assign state_output = state;
 
 
 
