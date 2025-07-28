@@ -65,6 +65,11 @@ module memory(
 	data[2] = 8'h40;
 	data[3] = 8'h01;
 	// lw x8, 120(x3)
+
+	data[4] = 8'h03;
+	data[5] = 8'hA4;
+	data[6] = 8'h81;
+	data[7] = 8'h07;
 	
 
 	data[140] = 8'd82;
