@@ -1,3 +1,4 @@
+
 module top_module(clock, reset);
 
       input wire clock;
@@ -13,7 +14,7 @@ module top_module(clock, reset);
       wire [1:0] ALUSrcB, ALUOp;
 
         // alu control
-      wire [3:0] ALUControlLine;
+      wire [3:0] ALUControlLine, state_out;
 
         //OUTPUTS OF DATAPATH:
 
@@ -41,7 +42,7 @@ module top_module(clock, reset);
       FSM fsm_inst (
           clock, reset, IR_out[6:0]
           ,regWrite, ALUSrcA, memRead, memWrite,MemtoReg, IorD, IRWrite, PCWrite, PCWriteCond,PCSource,
-          ALUOp,ALUSrcB
+          ALUOp,ALUSrcB, state_out
       );
        
       ALUControl ALU_control_INST (IR_out[31:25], IR_out[14:12], ALUOp, reset, ALUControlLine);
