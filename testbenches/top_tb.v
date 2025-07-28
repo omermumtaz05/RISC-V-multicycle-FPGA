@@ -1,3 +1,4 @@
+
 module top_tb();
 
 reg clock;
@@ -35,7 +36,9 @@ top_module uut(
     #10 
 	#10
 #10
-
+#10
+#10
+#10
     #10 $stop;
     
     
