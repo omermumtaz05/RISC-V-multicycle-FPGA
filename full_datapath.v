@@ -75,6 +75,12 @@ module memory(
 	data[9] = 8'h05;
 	data[10] = 8'h34;
 	data[11] = 8'h00;
+
+	data[12] = 8'hb3;
+	data[13] = 8'h05;
+	data[14] = 8'h85;
+	data[15] = 8'h40;
+	    
 	    
 	data[140] = 8'd82;
     end
@@ -105,6 +111,13 @@ module memory(
 	        data[9] <= 8'h05;
 	        data[10] <= 8'h34;
 	        data[11] <= 8'h00;
+	       
+	        data[12] <= 8'hb3;
+	        data[13] <= 8'h05;
+	        data[14] <= 8'h85;
+	        data[15] <= 8'h40;
+
+	       
 		
 	
 		data[140] <= 8'd82;
