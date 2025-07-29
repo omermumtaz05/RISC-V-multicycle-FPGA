@@ -85,17 +85,24 @@ module memory(
 	data[14] = 8'h85;
 	data[15] = 8'h40;
 
-	// and x13, x8, x3
-	data[16] = 8'hb3;
-	data[17] = 8'h76;
-	data[18] = 8'h34;
+	//beq x3, x11, 8
+	data[16] = 8'h63;
+	data[17] = 8'h84;
+	data[18] = 8'b1;
 	data[19] = 8'h00;
-	    
-	// or x14, x8, x3
-	data[20] = 8'h33;
-	data[21] = 8'h67;
+
+	
+	// and x13, x8, x3
+	data[20] = 8'hb3;
+	data[21] = 8'h76;
 	data[22] = 8'h34;
 	data[23] = 8'h00;
+	    
+	// or x14, x8, x3
+	data[24] = 8'h33;
+	data[25] = 8'h67;
+	data[26] = 8'h34;
+	data[27] = 8'h00;
 	    
 	data[140] = 8'd82;
     end
@@ -135,18 +142,23 @@ module memory(
 	        data[14] <= 8'h85;
 	        data[15] <= 8'h40;
 	       
-	       	// and x13, x8, x3
-	        data[16] <= 8'hb3;
-	        data[17] <= 8'h76;
-	        data[18] <= 8'h34;
-	        data[19] <= 8'h00;
-
-	       	    
-		// or x14, x8, x3
-	       data[20] <= 8'h33;
-	       data[21] <= 8'h67;
+		//beq x3, x11, 8
+	       data[16] <= 8'h63;
+	       data[17] <= 8'h84;
+	       data[18] <= 8'b1;
+	       data[19] <= 8'h00;
+	    
+		// and x13, x8, x3
+	       data[20] <= 8'hb3;
+	       data[21] <= 8'h76;
 	       data[22] <= 8'h34;
 	       data[23] <= 8'h00;
+	    
+		// or x14, x8, x3
+	       data[24] <= 8'h33;
+	       data[25] <= 8'h67;
+	       data[26] <= 8'h34;
+	       data[27] <= 8'h00;
 	    
 	
 		data[140] <= 8'd82;
