@@ -60,22 +60,26 @@ module memory(
     reg [7:0] data [255:0];
 
     initial begin
+	// addi x3, x0, 20
 	data[0] = 8'h93;
 	data[1] = 8'h01;
 	data[2] = 8'h40;
 	data[3] = 8'h01;
+	    
 	// lw x8, 120(x3)
 
 	data[4] = 8'h03;
 	data[5] = 8'hA4;
 	data[6] = 8'h81;
 	data[7] = 8'h07;
-	
+
+	// add x10, x3, x8
 	data[8] = 8'h33;
 	data[9] = 8'h05;
 	data[10] = 8'h34;
 	data[11] = 8'h00;
 
+	// sub x11, x10, x8
 	data[12] = 8'hb3;
 	data[13] = 8'h05;
 	data[14] = 8'h85;
