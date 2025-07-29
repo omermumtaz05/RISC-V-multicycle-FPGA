@@ -100,6 +100,11 @@ module memory(
 		data[5] <= 8'hA4;
 		data[6] <= 8'h81;
 		data[7] <= 8'h07;
+
+	        data[8] <= 8'h33;
+	        data[9] <= 8'h05;
+	        data[10] <= 8'h34;
+	        data[11] <= 8'h00;
 		
 	
 		data[140] <= 8'd82;
