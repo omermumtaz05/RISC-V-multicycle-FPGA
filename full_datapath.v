@@ -91,6 +91,11 @@ module memory(
 	data[18] = 8'h34;
 	data[19] = 8'h00;
 	    
+	// or x14, x8, x3
+	data[20] = 8'h33;
+	data[21] = 8'h67;
+	data[22] = 8'h34;
+	data[23] = 8'h00;
 	    
 	data[140] = 8'd82;
     end
@@ -135,9 +140,14 @@ module memory(
 	        data[17] <= 8'h76;
 	        data[18] <= 8'h34;
 	        data[19] <= 8'h00;
-	    
 
-	       
+	       	    
+		// or x14, x8, x3
+	       data[20] <= 8'h33;
+	       data[21] <= 8'h67;
+	       data[22] <= 8'h34;
+	       data[23] <= 8'h00;
+	    
 	
 		data[140] <= 8'd82;
        end
