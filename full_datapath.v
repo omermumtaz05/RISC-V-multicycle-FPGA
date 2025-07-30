@@ -145,7 +145,7 @@ module memory(
 		//beq x3, x11, 8
 	       data[16] <= 8'h63;
 	       data[17] <= 8'h84;
-	       data[18] <= 8'b1;
+	       data[18] <= 8'hb1;
 	       data[19] <= 8'h00;
 	    
 		// and x13, x8, x3
