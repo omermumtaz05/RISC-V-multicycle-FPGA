@@ -115,6 +115,12 @@ module memory(
 	data[34] = 8'h34;
 	data[35] = 8'h00;
 	    
+	// sw x3, 150(x0)
+	data[36] = 8'h23;
+	data[37] = 8'h2b;
+	data[38] = 8'h30;
+	data[39] = 8'h08;
+	    
 	data[140] = 8'd82;
     end
 
@@ -182,6 +188,13 @@ module memory(
 	       data[33] <= 8'h67;
 	       data[34] <= 8'h34;
 	       data[35] <= 8'h00;
+	       
+	       	// sw x3, 150(x0)
+	       data[36] <= 8'h23;
+	       data[37] <= 8'h2b;
+	       data[38] <= 8'h30;
+	       data[39] <= 8'h08;
+	    
 	    
 	
 		data[140] <= 8'd82;
