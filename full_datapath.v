@@ -85,24 +85,35 @@ module memory(
 	data[14] = 8'h85;
 	data[15] = 8'h40;
 
-	//beq x3, x11, 4
+	//beq x3, x11, 8
 	data[16] = 8'h63;
-	data[17] = 8'h82;
+	data[17] = 8'h84;
 	data[18] = 8'hb1;
 	data[19] = 8'h00;
-
+	    
+	// garbage address
+	data[20] = 8'hxx;
+	data[21] = 8'hxx;
+	data[22] = 8'hxx;
+	data[23] = 8'hxx;
+	    
+	// garbage address
+	data[24] = 8'hxx;
+	data[25] = 8'hxx;
+	data[26] = 8'hxx;
+	data[27] = 8'hxx;
 	
 	// and x13, x8, x3
-	data[20] = 8'hb3;
-	data[21] = 8'h76;
-	data[22] = 8'h34;
-	data[23] = 8'h00;
+	data[28] = 8'hb3;
+	data[29] = 8'h76;
+	data[30] = 8'h34;
+	data[31] = 8'h00;
 	    
 	// or x14, x8, x3
-	data[24] = 8'h33;
-	data[25] = 8'h67;
-	data[26] = 8'h34;
-	data[27] = 8'h00;
+	data[32] = 8'h33;
+	data[33] = 8'h67;
+	data[34] = 8'h34;
+	data[35] = 8'h00;
 	    
 	data[140] = 8'd82;
     end
@@ -142,23 +153,35 @@ module memory(
 	        data[14] <= 8'h85;
 	        data[15] <= 8'h40;
 	       
-		//beq x3, x11, 4
+		//beq x3, x11, 8
 	       data[16] <= 8'h63;
-	       data[17] <= 8'h82;
+	       data[17] <= 8'h84;
 	       data[18] <= 8'hb1;
 	       data[19] <= 8'h00;
 	    
+		// garbage address
+	       data[20] <= 8'hxx;
+	       data[21] <= 8'hxx;
+	       data[22] <= 8'hxx;
+	       data[23] <= 8'hxx;
+	    
+		// garbage address
+	       data[24] <= 8'hxx;
+	       data[25] <= 8'hxx;
+	       data[26] <= 8'hxx;
+	       data[27] <= 8'hxx;
+	
 		// and x13, x8, x3
-	       data[20] <= 8'hb3;
-	       data[21] <= 8'h76;
-	       data[22] <= 8'h34;
-	       data[23] <= 8'h00;
+	       data[28] <= 8'hb3;
+	       data[29] <= 8'h76;
+	       data[30] <= 8'h34;
+	       data[31] <= 8'h00;
 	    
 		// or x14, x8, x3
-	       data[24] <= 8'h33;
-	       data[25] <= 8'h67;
-	       data[26] <= 8'h34;
-	       data[27] <= 8'h00;
+	       data[32] <= 8'h33;
+	       data[33] <= 8'h67;
+	       data[34] <= 8'h34;
+	       data[35] <= 8'h00;
 	    
 	
 		data[140] <= 8'd82;
