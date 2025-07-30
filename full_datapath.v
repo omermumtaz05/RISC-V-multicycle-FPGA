@@ -85,9 +85,9 @@ module memory(
 	data[14] = 8'h85;
 	data[15] = 8'h40;
 
-	//beq x3, x11, 8
+	//beq x3, x11, 4
 	data[16] = 8'h63;
-	data[17] = 8'h84;
+	data[17] = 8'h82;
 	data[18] = 8'hb1;
 	data[19] = 8'h00;
 
@@ -142,9 +142,9 @@ module memory(
 	        data[14] <= 8'h85;
 	        data[15] <= 8'h40;
 	       
-		//beq x3, x11, 8
+		//beq x3, x11, 4
 	       data[16] <= 8'h63;
-	       data[17] <= 8'h84;
+	       data[17] <= 8'h82;
 	       data[18] <= 8'hb1;
 	       data[19] <= 8'h00;
 	    
