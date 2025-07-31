@@ -18,12 +18,11 @@ module memory(
 	data[2] = 8'h40;
   	data[3] = 8'h00;
 	    
-	// lw x8, 120(x3)
-
-	data[4] = 8'h03;
-	data[5] = 8'hA4;
-	data[6] = 8'h81;
-	data[7] = 8'h07;
+	//addi x5, x0, -1
+	data[4] = 8'h93;
+	data[5] = 8'h02;
+	data[6] = 8'hF0;
+	data[7] = 8'hFF;
 
 	// add x10, x3, x8
 	data[8] = 8'h33;
@@ -93,11 +92,11 @@ module memory(
 		data[2] <= 8'h40;
 	        data[3] <= 8'h00;
 		
-	        // lw x8, 120(x3)
-		data[4] <= 8'h03;
-		data[5] <= 8'hA4;
-		data[6] <= 8'h81;
-		data[7] <= 8'h07;
+		//addi x5, x0, -1
+	       data[4] <= 8'h93;
+	       data[5] <= 8'h02;
+	       data[6] <= 8'hF0;
+	       data[7] <= 8'hFF;
 
 	        // add x10, x3, x8
 	        data[8] <= 8'h33;
