@@ -66,10 +66,10 @@ module memory(
 	data[2] = 8'h40;
   	data[3] = 8'h00;
 	    
-	//addi x5, x0, -1
+	//addi x5, x5, -1
 	data[4] = 8'h93;
-	data[5] = 8'h02;
-	data[6] = 8'hF0;
+	data[5] = 8'h82;
+	data[6] = 8'hF2;
 	data[7] = 8'hFF;
 
 	// beq x5, x0, 4
@@ -103,10 +103,10 @@ module memory(
 		data[2] <= 8'h40;
 	        data[3] <= 8'h00;
 		
-		//addi x5, x0, -1
+		//addi x5, x5, -1
 	       data[4] <= 8'h93;
-	       data[5] <= 8'h02;
-	       data[6] <= 8'hF0;
+	       data[5] <= 8'h82;
+	       data[6] <= 8'hF2;
 	       data[7] <= 8'hFF;
 
 		// beq x5, x0, 4
