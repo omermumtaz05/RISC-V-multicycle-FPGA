@@ -60,68 +60,30 @@ module memory(
     reg [7:0] data [255:0];
 
     initial begin
-	// addi x3, x0, 20
+	// addi x5, x0, 4
 	data[0] = 8'h93;
-	data[1] = 8'h01;
+  	data[1] = 8'h02;
 	data[2] = 8'h40;
-	data[3] = 8'h01;
+  	data[3] = 8'h00;
 	    
-	// lw x8, 120(x3)
+	//addi x5, x0, -1
+	data[4] = 8'h93;
+	data[5] = 8'h02;
+	data[6] = 8'hF0;
+	data[7] = 8'hFF;
 
-	data[4] = 8'h03;
-	data[5] = 8'hA4;
-	data[6] = 8'h81;
-	data[7] = 8'h07;
-
-	// add x10, x3, x8
-	data[8] = 8'h33;
-	data[9] = 8'h05;
-	data[10] = 8'h34;
+	// beq x5, x0, 4
+	data[8] = 8'h63;
+	data[9] = 8'h82;
+	data[10] = 8'h02;
 	data[11] = 8'h00;
 
-	// sub x11, x10, x8
-	data[12] = 8'hb3;
-	data[13] = 8'h05;
-	data[14] = 8'h85;
-	data[15] = 8'h40;
+	// beq x0, x0, -8
+	data[12] = 8'he3;
+	data[13] = 8'h0c;
+	data[14] = 8'h00;
+	data[15] = 8'hfe;
 
-	//beq x3, x11, 8
-	data[16] = 8'h63;
-	data[17] = 8'h84;
-	data[18] = 8'hb1;
-	data[19] = 8'h00;
-	    
-	// garbage address
-	data[20] = 8'hxx;
-	data[21] = 8'hxx;
-	data[22] = 8'hxx;
-	data[23] = 8'hxx;
-	    
-	// garbage address
-	data[24] = 8'hxx;
-	data[25] = 8'hxx;
-	data[26] = 8'hxx;
-	data[27] = 8'hxx;
-	
-	// and x13, x8, x3
-	data[28] = 8'hb3;
-	data[29] = 8'h76;
-	data[30] = 8'h34;
-	data[31] = 8'h00;
-	    
-	// or x14, x8, x3
-	data[32] = 8'h33;
-	data[33] = 8'h67;
-	data[34] = 8'h34;
-	data[35] = 8'h00;
-	    
-	// sw x3, 150(x0)
-	data[36] = 8'h23;
-	data[37] = 8'h2b;
-	data[38] = 8'h30;
-	data[39] = 8'h08;
-	    
-	data[140] = 8'd82;
     end
 
 
@@ -135,69 +97,31 @@ module memory(
                 	data[i] <= 8'b0;
 	        // reload hardcoded instructions and data
 
-	       // addi x3, x0, 20
+	       // addi x5, x0, 4
 	       	data[0] <= 8'h93;
-		data[1] <= 8'h01;
+	        data[1] <= 8'h02;
 		data[2] <= 8'h40;
-		data[3] <= 8'h01;
+	        data[3] <= 8'h00;
 		
-	        // lw x8, 120(x3)
-		data[4] <= 8'h03;
-		data[5] <= 8'hA4;
-		data[6] <= 8'h81;
-		data[7] <= 8'h07;
+		//addi x5, x0, -1
+	       data[4] <= 8'h93;
+	       data[5] <= 8'h02;
+	       data[6] <= 8'hF0;
+	       data[7] <= 8'hFF;
 
-	        // add x10, x3, x8
-	        data[8] <= 8'h33;
-	        data[9] <= 8'h05;
-	        data[10] <= 8'h34;
-	        data[11] <= 8'h00;
+		// beq x5, x0, 4
+	       data[8] <= 8'h63;
+	       data[9] <= 8'h82;
+	       data[10] <= 8'h02;
+	       data[11] <= 8'h00;
 
-	       // sub x11, x10, x8
-	        data[12] <= 8'hb3;
-	        data[13] <= 8'h05;
-	        data[14] <= 8'h85;
-	        data[15] <= 8'h40;
+		// beq x0, x0, -8
+	       data[12] <= 8'he3;
+	       data[13] <= 8'h0c;
+	       data[14] <= 8'h00;
+	       data[15] <= 8'hfe;
 	       
-		//beq x3, x11, 8
-	       data[16] <= 8'h63;
-	       data[17] <= 8'h84;
-	       data[18] <= 8'hb1;
-	       data[19] <= 8'h00;
-	    
-		// garbage address
-	       data[20] <= 8'hxx;
-	       data[21] <= 8'hxx;
-	       data[22] <= 8'hxx;
-	       data[23] <= 8'hxx;
-	    
-		// garbage address
-	       data[24] <= 8'hxx;
-	       data[25] <= 8'hxx;
-	       data[26] <= 8'hxx;
-	       data[27] <= 8'hxx;
-	
-		// and x13, x8, x3
-	       data[28] <= 8'hb3;
-	       data[29] <= 8'h76;
-	       data[30] <= 8'h34;
-	       data[31] <= 8'h00;
-	    
-		// or x14, x8, x3
-	       data[32] <= 8'h33;
-	       data[33] <= 8'h67;
-	       data[34] <= 8'h34;
-	       data[35] <= 8'h00;
-	       
-	       	// sw x3, 150(x0)
-	       data[36] <= 8'h23;
-	       data[37] <= 8'h2b;
-	       data[38] <= 8'h30;
-	       data[39] <= 8'h08;
-	    
-	    
-	
-		data[140] <= 8'd82;
+
        end
 
        else if(memWrite)
@@ -217,8 +141,6 @@ module memory(
 
 
 endmodule
-
-//VERIFY AGAIN
 
 module register(
     input [4:0] readReg1,
