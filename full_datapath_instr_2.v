@@ -78,9 +78,9 @@ module memory(
 	data[10] = 8'h02;
 	data[11] = 8'h00;
 
-	// beq x0, x0, -8
+	// beq x0, x0, -12
 	data[12] = 8'he3;
-	data[13] = 8'h0c;
+	data[13] = 8'h0a;
 	data[14] = 8'h00;
 	data[15] = 8'hfe;
 
@@ -115,9 +115,9 @@ module memory(
 	       data[10] <= 8'h02;
 	       data[11] <= 8'h00;
 
-		// beq x0, x0, -8
+		// beq x0, x0, -12
 	       data[12] <= 8'he3;
-	       data[13] <= 8'h0c;
+	       data[13] <= 8'h0a;
 	       data[14] <= 8'h00;
 	       data[15] <= 8'hfe;
 	       
