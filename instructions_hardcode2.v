@@ -24,10 +24,10 @@ module memory(
 	data[6] = 8'hF0;
 	data[7] = 8'hFF;
 
-	// add x10, x3, x8
-	data[8] = 8'h33;
-	data[9] = 8'h05;
-	data[10] = 8'h34;
+	// beq x5, x0, 4
+	data[8] = 8'h63;
+	data[9] = 8'hc2;
+	data[10] = 8'h02;
 	data[11] = 8'h00;
 
 	// sub x11, x10, x8
@@ -98,11 +98,11 @@ module memory(
 	       data[6] <= 8'hF0;
 	       data[7] <= 8'hFF;
 
-	        // add x10, x3, x8
-	        data[8] <= 8'h33;
-	        data[9] <= 8'h05;
-	        data[10] <= 8'h34;
-	        data[11] <= 8'h00;
+		// beq x5, x0, 4
+	       data[8] <= 8'h63;
+	       data[9] <= 8'hc2;
+	       data[10] <= 8'h02;
+	       data[11] <= 8'h00;
 
 	       // sub x11, x10, x8
 	        data[12] <= 8'hb3;
