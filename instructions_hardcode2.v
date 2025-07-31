@@ -14,9 +14,9 @@ module memory(
     initial begin
 	// addi x5, x0, 4
 	data[0] = 8'h93;
-  data[1] = 8'h02;
+  	data[1] = 8'h02;
 	data[2] = 8'h40;
-  data[3] = 8'h00;
+  	data[3] = 8'h00;
 	    
 	// lw x8, 120(x3)
 
@@ -89,9 +89,9 @@ module memory(
 
 	       // addi x3, x0, 20
 	       	data[0] <= 8'h93;
-		data[1] <= 8'h01;
+	        data[1] <= 8'h02;
 		data[2] <= 8'h40;
-		data[3] <= 8'h01;
+	        data[3] <= 8'h00;
 		
 	        // lw x8, 120(x3)
 		data[4] <= 8'h03;
