@@ -38,7 +38,7 @@ module ProgramCounter(
     if(reset)
       pc <= 32'b0;
     else if(PCWrite)
-      pc <= next_pc;
+      pc <= next_pc && 32'h7f; // to make sure 128 is the last instruction address
     
   
       
