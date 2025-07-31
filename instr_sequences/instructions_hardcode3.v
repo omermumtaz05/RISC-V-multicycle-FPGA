@@ -19,17 +19,17 @@ module memory(
 	data[2] = 8'h50;
   	data[3] = 8'h00;
 	    
-	//addi x5, x5, -1
+	//addi x1, x0, 200
 	data[4] = 8'h93;
-	data[5] = 8'h82;
-	data[6] = 8'hF2;
-	data[7] = 8'hFF;
+	data[5] = 8'h00;
+	data[6] = 8'h80;
+	data[7] = 8'h0c;
 
-	// beq x5, x0, 4
-	data[8] = 8'h63;
-	data[9] = 8'h82;
-	data[10] = 8'h02;
-	data[11] = 8'h00;
+	// lw x2, -50(x1)
+	data[8] = 8'h03;
+	data[9] = 8'ha1;
+	data[10] = 8'he0;
+	data[11] = 8'hfc;
 
 	// beq x0, x0, -12
 	data[12] = 8'he3;
@@ -37,6 +37,8 @@ module memory(
 	data[14] = 8'h00;
 	data[15] = 8'hfe;
 
+	data[150] = 8'h87;
+	    
     end
 
 
@@ -56,23 +58,25 @@ module memory(
 	       data[2] <= 8'h50;
 	       data[3] <= 8'h00;
 	       
-		//addi x5, x5, -1
+		//addi x1, x0, 200
 	       data[4] <= 8'h93;
-	       data[5] <= 8'h82;
-	       data[6] <= 8'hF2;
-	       data[7] <= 8'hFF;
+	       data[5] <= 8'h00;
+	       data[6] <= 8'h80;
+	       data[7] <= 8'h0c;
 
-		// beq x5, x0, 4
-	       data[8] <= 8'h63;
-	       data[9] <= 8'h82;
-	       data[10] <= 8'h02;
-	       data[11] <= 8'h00;
+		// lw x2, -50(x1)
+	       data[8] <= 8'h03;
+	       data[9] <= 8'ha1;
+	       data[10] <= 8'he0;
+	       data[11] <= 8'hfc;
 
 		// beq x0, x0, -12
 	       data[12] <= 8'he3;
 	       data[13] <= 8'h0a;
 	       data[14] <= 8'h00;
 	       data[15] <= 8'hfe;
+
+	       data[150] = 8'h87;
 	       
 
        end
