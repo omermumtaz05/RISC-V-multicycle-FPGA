@@ -26,7 +26,7 @@ module memory(
 
 	// beq x5, x0, 4
 	data[8] = 8'h63;
-	data[9] = 8'hc2;
+	data[9] = 8'h82;
 	data[10] = 8'h02;
 	data[11] = 8'h00;
 
@@ -100,7 +100,7 @@ module memory(
 
 		// beq x5, x0, 4
 	       data[8] <= 8'h63;
-	       data[9] <= 8'hc2;
+	       data[9] <= 8'h82;
 	       data[10] <= 8'h02;
 	       data[11] <= 8'h00;
 
