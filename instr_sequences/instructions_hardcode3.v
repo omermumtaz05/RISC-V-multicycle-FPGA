@@ -13,10 +13,10 @@ module memory(
     reg [7:0] data [255:0];
 
     initial begin
-	// addi x5, x0, 4
-	data[0] = 8'h93;
-  	data[1] = 8'h02;
-	data[2] = 8'h40;
+	//addi x0, x0, 5
+	data[0] = 8'h13;
+	data[1] = 8'h00;
+	data[2] = 8'h50;
   	data[3] = 8'h00;
 	    
 	//addi x5, x5, -1
@@ -50,12 +50,12 @@ module memory(
                 	data[i] <= 8'b0;
 	        // reload hardcoded instructions and data
 
-	       // addi x5, x0, 4
-	       	data[0] <= 8'h93;
-	        data[1] <= 8'h02;
-		data[2] <= 8'h40;
-	        data[3] <= 8'h00;
-		
+		//addi x0, x0, 5
+	       data[0] <= 8'h13;
+	       data[1] <= 8'h00;
+	       data[2] <= 8'h50;
+	       data[3] <= 8'h00;
+	       
 		//addi x5, x5, -1
 	       data[4] <= 8'h93;
 	       data[5] <= 8'h82;
