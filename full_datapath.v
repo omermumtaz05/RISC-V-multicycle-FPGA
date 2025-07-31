@@ -247,6 +247,7 @@ module register(
         	
        else if(regWrite & writeReg != 0)
             RF[writeReg] <= writeData;
+	    RF[0] <= 32'b0; // make sure x0 is always 0 
 
     always @ (*)
         begin
