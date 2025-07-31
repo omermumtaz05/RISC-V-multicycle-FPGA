@@ -27,9 +27,10 @@ module top_module(clock, reset);
 
         //mux outputs
       wire [31:0] M1, M2, M3, M4, M5;
-    
+      wire [31:0] next_pc;
 
       assign PCcontrol = PCWrite | (PCWriteCond & zero);
+      
 
         // Instantiation the muxes
       mem_mux MEM_INST (IorD, PC, ALUOut_out, M1);
