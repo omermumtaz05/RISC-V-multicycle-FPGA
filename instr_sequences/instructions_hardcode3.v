@@ -25,17 +25,29 @@ module memory(
 	data[6] = 8'h80;
 	data[7] = 8'h0c;
 
-	// lw x2, -50(x1)
+	// lw x2, -50(x1) -> load whatever is in address -50 + 200 (150)into reg x2
 	data[8] = 8'h03;
 	data[9] = 8'ha1;
 	data[10] = 8'he0;
 	data[11] = 8'hfc;
 
-	// beq x0, x0, -12
-	data[12] = 8'he3;
-	data[13] = 8'h0a;
-	data[14] = 8'h00;
-	data[15] = 8'hfe;
+	// addi x3, x0, 99
+	data[12] = 8'h93;
+	data[13] = 8'h01;
+	data[14] = 8'h30;
+	data[15] = 8'h06;
+
+	// sw x3, -20(x1) -> store whatever is in register x3 into address -20 + 200 (180)
+	data[16] = 8'h23;
+	data[17] = 8'ha6;
+	data[18] = 8'h30;
+	data[19] = 8'hfe;
+
+	//lw x4, -20(x1)
+	data[20] = 8'h03;
+	data[21] = 8'ha2;
+	data[22] = 8'hc0;
+	data[23] = 8'hfe;
 
 	data[150] = 8'h87;
 	    
@@ -64,19 +76,31 @@ module memory(
 	       data[6] <= 8'h80;
 	       data[7] <= 8'h0c;
 
-		// lw x2, -50(x1)
+		// lw x2, -50(x1) -> load whatever is in address -50 + 200 (150)into reg x2
 	       data[8] <= 8'h03;
 	       data[9] <= 8'ha1;
 	       data[10] <= 8'he0;
 	       data[11] <= 8'hfc;
 
-		// beq x0, x0, -12
-	       data[12] <= 8'he3;
-	       data[13] <= 8'h0a;
-	       data[14] <= 8'h00;
-	       data[15] <= 8'hfe;
+		// addi x3, x0, 99
+	       data[12] <= 8'h93;
+	       data[13] <= 8'h01;
+	       data[14] <= 8'h30;
+	       data[15] <= 8'h06;
 
-	       data[150] = 8'h87;
+	       // sw x3, -20(x1) -> store whatever is in register x3 into address -20 + 200 (180)
+	       data[16] <= 8'h23;
+	       data[17] <= 8'ha6;
+	       data[18] <= 8'h30;
+	       data[19] <= 8'hfe;
+
+	       //lw x4, -20(x1)
+	       data[20] <= 8'h03;
+	       data[21] <= 8'ha2;
+	       data[22] <= 8'hc0;
+	       data[23] <= 8'hfe;
+
+	       data[150] <= 8'h87;
 	       
 
        end
