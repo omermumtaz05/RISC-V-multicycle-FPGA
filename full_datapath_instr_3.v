@@ -100,7 +100,19 @@ module memory(
 	data[22] = 8'hc0;
 	data[23] = 8'hfe;
 
+	//lw x5, 0(x1) -> test full word loading of data in addresses 200 - 203 into register x5
+	data[20] = 8'h83;
+	data[21] = 8'ha2;
+	data[22] = 8'h00;
+	data[23] = 8'h00;
+
 	data[150] = 8'h87;
+
+	// hardcoding data to test full word loading into register
+	data[200] = 8'h21;
+	data[201] = 8'h43;
+	data[202] = 8'h65;
+	data[203] = 8'h87;
 	    
     end
 
@@ -151,8 +163,19 @@ module memory(
 	       data[22] <= 8'hc0;
 	       data[23] <= 8'hfe;
 
+	       	//lw x5, 0(x1) -> test ful word loading of data in addresses 200 - 203 into register x5
+	       data[20] <= 8'h83;
+	       data[21] <= 8'ha2;
+	       data[22] <= 8'h00;
+	       data[23] <= 8'h00;
+
 	       data[150] <= 8'h87;
-	       
+
+	       	// hardcoding data to test full word loading into register
+	       data[200] <= 8'h21;
+	       data[201] <= 8'h43;
+	       data[202] <= 8'h65;
+	       data[203] <= 8'h87;
 
        end
 
