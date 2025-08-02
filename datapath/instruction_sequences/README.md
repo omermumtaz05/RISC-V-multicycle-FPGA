@@ -2,7 +2,7 @@ Hello! This directory contains memory modules with different instruction sequenc
 
 Each of the three 'memory_instr_seq*.v' file contains different hardcoded instruction sequences to be executed in simulation.
 
-## The different instruction sequences are:
+## Instruction Sequences:
  ### 1.
 ```
   addi x3, x0, 20
@@ -36,12 +36,15 @@ Each of the three 'memory_instr_seq*.v' file contains different hardcoded instru
 ```
   With hex 87 hardcoded into address 150
 
-Instruction decoding was done with the help of https://luplab.gitlab.io/rvcodecjs/
+## Instuction encoding and writing your own instruction sequence
+
+Instruction endcoding was done with the help of https://luplab.gitlab.io/rvcodecjs/
 
 If you would like to input your own instruction sequence for testing, please:
-- Go to the website https://luplab.gitlab.io/rvcodecjs)=
-- Write in the desired instruction
-- Set the desired instruction decoded in hex or binary into 4 addresses in memory (as memory is byte accessible) in little endian order starting from address 0
+- Go to the website https://luplab.gitlab.io/rvcodecjs
+- Enter desired instruction
+- Copy desired instruction encoded in hex or binary
+- Write decoded instruction into 'intial .. end' block encoding addresses between 0 to 127 in little endian order
 - Set necessary data memory addresses to values if lw is being used.
 - Write the same address encoding in the reset block as well with non-blocking assignments
 - Copy and paste this into a new full_dp_instr_seq*.v file with only changing the memory module
