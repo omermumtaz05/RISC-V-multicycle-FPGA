@@ -41,12 +41,12 @@ Each of the three ```memory_instr_seq*.v``` file contains different hardcoded in
 Instruction encoding was done with the help of https://luplab.gitlab.io/rvcodecjs/
 
 If you would like to input your own instruction sequence for testing:
-1.  Go to the website https://luplab.gitlab.io/rvcodecjs
+1. Go to the website https://luplab.gitlab.io/rvcodecjs
 2. Enter desired instruction
 3. Copy hex or binary machine code
 4. In a new memory module, ```memory_instr_seq*.v```, copy and paste the standard memory module and write the instruction machine code in the initial begin ... end block
 5. Use little endian byte order and only use addresses 0 - 127.
-   - For example, encoding hex 0x00528333 would look like
+ - For example, encoding hex 0x00528333 would look like
      ``` verilog
      initial begin
      
@@ -59,7 +59,7 @@ If you would like to input your own instruction sequence for testing:
      end
      ```
 6. If a lw instruction is being executed, set necessary data memory values in addresses 128 - 255
-  - For example, setting address 200 to decimal 100 would look like:
+ - For example, setting address 200 to decimal 100 would look like:
     ``` verilog
      initial begin
        //Instruction encoding from addresses 0 - 127 
@@ -68,9 +68,8 @@ If you would like to input your own instruction sequence for testing:
     
        // ...
     end
-    
-  - Because memory is byte addressable, setting addresses to any value greater than 1 byte would require you to set the remaining 4 addresses to contain remaining bits
-    - For example, writing 0x12345678 into data memory starting from address 216 would look like:
+ - Because memory is byte addressable, setting addresses to any value greater than 1 byte would require you to set the remaining 4 addresses to contain remaining bits
+  - For example, writing 0x12345678 into data memory starting from address 216 would look like:
       ``` verilog
       initial begin
        //instruction encoding and possible other data
@@ -82,10 +81,10 @@ If you would like to input your own instruction sequence for testing:
 
        // ...
       end
-    - Memory module will then concatenate all 4 addresses into one full word if called
+   - Memory module will then concatenate all 4 addresses into one full word if called
 
-7. Repeat the same memory initialization into the reset block using non-blocking ``` <= ``` assignments after the for-loop
-8. Copy and paste this into a new full_dp_instr_seq*.v file with only changing the memory module
+7. Repeat the same memory initialization into the ```reset``` block using non-blocking ``` <= ``` assignments after the ```for```loop
+8. Copy and paste this into a new ```full_dp_instr_seq*.v```file with only changing the memory module
 9. Simulate the full_dp file on ModelSIM along with:
  - full_control.v
  - top.v
