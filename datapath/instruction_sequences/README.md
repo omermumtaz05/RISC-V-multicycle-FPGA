@@ -4,7 +4,7 @@ Each of the three ```memory_instr_seq*.v``` file contains different hardcoded in
 
 ## Instruction Sequences:
  ### 1.
-```
+``` assembly
   addi x3, x0, 20
   lw x8, 120(x3)
   add x10, x3, x8
@@ -19,14 +19,14 @@ Each of the three ```memory_instr_seq*.v``` file contains different hardcoded in
   With decimal value 82 hardcoded into address 140
   
 ### 2:
-```
+``` assembly
   addi x5, x0, 4
   addi x5, x0, -1
   beq x5, x0, 4
   beq x0, x0, -8
 ```
 ### 3:
-```
+``` assembly
   addi x0, x0, 5
   addi x1, x0, 200
   lw x2, -50(x1)
@@ -47,7 +47,7 @@ If you would like to input your own instruction sequence for testing:
 4. In a new memory module, ```memory_instr_seq*.v```, copy and paste the standard memory module and write the instruction machine code in the initial begin ... end block
 5. Use little endian byte order and only use addresses 0 - 127.
    - For example, encoding hex 0x00528333 would look like
-     ```
+     ``` verilog
      initial begin
      
       data[0] = 8'h33; //lsb
@@ -60,7 +60,7 @@ If you would like to input your own instruction sequence for testing:
      ```
 6. If a lw instruction is being executed, set necessary data memory values in addresses 128 - 255
   - For example, setting address 200 to decimal 100 would look like:
-    ```
+    ``` verilog
      initial begin
        //Instruction encoding from addresses 0 - 127 
 
@@ -71,7 +71,7 @@ If you would like to input your own instruction sequence for testing:
     
   - Because memory is byte addressable, setting addresses to any value greater than 1 byte would require you to set the remaining 4 addresses to contain remaining bits
     - For example, writing 0x12345678 into data memory starting from address 216 would look like:
-      ```
+      ``` verilog
       initial begin
        //instruction encoding and possible other data
 
