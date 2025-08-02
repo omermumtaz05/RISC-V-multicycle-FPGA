@@ -1,6 +1,6 @@
 Hello! This directory contains memory modules with different instruction sequences hardcoded.
 
-Each of the three ```memory_instr_seq*.v``` file contains different hardcoded instruction sequences to be executed in simulation.
+Each of the three ```memory_instr_seq*.v``` file contains different hardcoded instruction sequences. For testing and simulation, the memory module in a full_datapath file should  be replaced with a memory module with desired instructions and data hardcoded.
 
 ## Instruction Sequences:
  ### 1.
@@ -49,10 +49,12 @@ If you would like to input your own instruction sequence for testing:
    - For example, encoding hex 0x00528333 would look like
      ```
      initial begin
-      data[0] = 8'h33;
+     
+      data[0] = 8'h33; //lsb
       data[1] = 8'h83;
       data[2] = 8'h52;
-      data[3] = 8'h00;
+      data[3] = 8'h00; //msb
+     
      //...
      end
      ```
@@ -62,7 +64,8 @@ If you would like to input your own instruction sequence for testing:
      initial begin
        //Instruction encoding from addresses 0 - 127 
 
-       data[200] = 8'd100
+       data[200] = 8'd100;
+    
        // ...
     end
     
@@ -81,7 +84,7 @@ If you would like to input your own instruction sequence for testing:
       end
     - Memory module will then concatenate all 4 addresses into one full word if called
 
-7. Write the same addresses encoding in the reset block after for loop as well with non-blocking assignments
+7. Repeat the same memory initialization into the reset block using non-blocking ``` <= ``` assignments after the for-loop
 8. Copy and paste this into a new full_dp_instr_seq*.v file with only changing the memory module
 9. Simulate the full_dp file on ModelSIM along with:
  - full_control.v
