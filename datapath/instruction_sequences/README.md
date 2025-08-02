@@ -4,32 +4,32 @@ Each of the three 'memory_instr_seq*.v' file contains different hardcoded instru
 
 The different instruction sequences are:
  - 1:
-  addi x3, x0, 20
-  lw x8, 120(x3)
-  add x10, x3, x8
-  sub x11, x10, x8
-  beq x3, x11, 8
-  *garbage address*
-  *garbage address*
-  and x13, x8, x3
-  or x14, x8, x3
-  sw x3, 150(x0)
+  #addi x3, x0, 20
+  #lw x8, 120(x3)
+  #add x10, x3, x8
+  #sub x11, x10, x8
+  #beq x3, x11, 8
+  #*garbage address to be ignored during  branching*
+  #*garbage address to be ignored during branching*
+  #and x13, x8, x3
+  #or x14, x8, x3
+  #sw x3, 150(x0)
 
   With decimal 82 hardcoded into address 140,
 
 - 2:
-  addi x5, x0, 4
-  addi x5, x0, -1
-  beq x5, x0, 4
-  beq x0, x0, -8
+  #addi x5, x0, 4
+  #addi x5, x0, -1
+  #beq x5, x0, 4
+  #beq x0, x0, -8
 
 - 3:
-  addi x0, x0, 5
-  addi x1, x0, 200
-  lw x2, -50(x1)
-  addi x3, x0, 99
-  sw x3, -20(x1)
-  lw x4, -20(x1)
+  #addi x0, x0, 5
+  #addi x1, x0, 200
+  #lw x2, -50(x1)
+  #addi x3, x0, 99
+  #sw x3, -20(x1)
+  #lw x4, -20(x1)
 
   With hex 87 hardcoded into address 150
 
