@@ -1,4 +1,4 @@
-Welcome! 
+Welcome!
 This directory contains memory modules with different instruction sequences hardcoded.
 
 Each of the three ```memory_instr_seq*.v``` file contains different hardcoded instruction sequences. For testing and simulation, the memory module in a full_datapath file should  be replaced with a memory module with desired instructions and data hardcoded.
