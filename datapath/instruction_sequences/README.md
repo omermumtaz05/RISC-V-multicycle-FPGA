@@ -9,7 +9,7 @@ The sequences were used to fully test and verify:
  - Negative immediate values
  - x0 consistently storing 32'b0
 
-Addresses `0` to `127` are allocated for instruction memory and the remaining addresses `128` - `255` are allocated for data memory, allowing us to have a total of 32 instructions in one sequence as memory is byte addressable.
+Addresses `0` - `127` are allocated for instruction memory and the remaining addresses `128` - `255` are allocated for data memory, allowing us to have a total of 32 instructions in one sequence as memory is byte addressable.
 
 ## Instruction Sequences Used for Testing:
  ### All R-type, branching when equal, lw, and sw:
@@ -19,8 +19,8 @@ Addresses `0` to `127` are allocated for instruction memory and the remaining ad
   add x10, x3, x8
   sub x11, x10, x8
   beq x3, x11, 8
-  //Unused address ignored during  branching
-  //Unused address ignored during  branching
+  //Unused address ignored during branching
+  //Unused address ignored during branching
   and x13, x8, x3
   or x14, x8, x3
   sw x3, 150(x0)
@@ -90,8 +90,8 @@ If you would like to input your own instruction sequence for testing:
      ```
    - The memory module will then concatenate all 4 addresses into one full word if called.
 
-6. Repeat the same memory initialization in the ```reset``` block using non-blocking ``` <= ``` assignments after the ```for```loop.
-   - For example, encoding the instructions and data above into the ``` reset``` block would look like:
+6. Repeat the same memory initialization in the `reset` block using non-blocking ` <= ` assignments after the `for` loop.
+   - For example, encoding the instructions and data above into the ` reset` block would look like:
    ``` verilog
     if(reset)
     begin
@@ -112,11 +112,11 @@ If you would like to input your own instruction sequence for testing:
    
    ```
      
-7. Copy and paste this into a new ```full_dp_instr_seq*.v```file replacing the previous memory module.
+7. Copy and paste this into a new `full_dp_instr_seq*.v` file replacing the previous memory module.
 8. Simulate the full_dp file on ModelSIM along with:
- - ```full_control.v```
- - ```top.v```
- - ```top_tb.v```
+ -  `full_control.v`
+ -  `top.v`
+ -  `top_tb.v`
 
 
-More instructions on full simulation can be found in the ```testbenches/``` directory. 
+More instructions on full simulation can be found in the `testbenches/` directory. 
