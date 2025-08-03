@@ -27,7 +27,7 @@ Addresses `0` to `127` are allocated for instruction memory and the remaining ad
  ```
   - Decimal value `82` was hardcoded into address `140`
   
-### Branching with not equal case and negative immediate loop:
+### Branching with not equal case and negative immediate:
 ``` assembly
   addi x5, x0, 4
   addi x5, x0, -1
