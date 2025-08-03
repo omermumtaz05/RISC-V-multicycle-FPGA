@@ -3,6 +3,8 @@ This directory contains three ```memory_instr_seq*.v``` modules that contain dif
 
 The sequences were used to fully test and verify beq, lw, sw, and all r-type instructions, along with negative immediate values, x0 consistently storing 32'b0, beq when registers are not equal, and sw/lw memory consistency.
 
+Addresses 0 to 127 are allocated for instruction memory and the remaning addresses 128 - 255 are allocated for data memory, allowing us to have a total of 32 instructions in one sequence as memory is byte addressable.
+
 ## Instruction Sequences Used for Testing:
  ### 1.
 ``` assembly
@@ -46,7 +48,7 @@ If you would like to input your own instruction sequence for testing:
 2. Enter desired instruction
 3. Copy hex or binary machine code
 4. In a new memory module, ```memory_instr_seq*.v```, copy and paste the standard memory module and write the instruction machine code in the initial begin ... end block
- - Use little endian byte order and only use addresses 0 - 127.
+ - Use little endian byte order and only use addresses 0 - 127 as they
  - For example, encoding hex 0x00528333 would look like
      ``` verilog
      initial begin
