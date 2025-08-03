@@ -1,5 +1,5 @@
 Welcome!
-This directory contains three ```memory_instr_seq*.v``` modules that contain different hardcoded instruction sequences into a standard memory module. 
+This directory contains three ```memory_instr_seq*.v``` modules containing different hardcoded instruction sequences into a standard memory module. 
 
 The sequences were used to fully test and verify:
  - Branch if equal (`beq`) with equal and unequal cases
@@ -19,8 +19,8 @@ Addresses `0` to `127` are allocated for instruction memory and the remaining ad
   add x10, x3, x8
   sub x11, x10, x8
   beq x3, x11, 8
-  //Unused address to be ignored during  branching
-  //Unused address to be ignored during  branching
+  //Unused address ignored during  branching
+  //Unused address ignored during  branching
   and x13, x8, x3
   or x14, x8, x3
   sw x3, 150(x0)
@@ -34,7 +34,7 @@ Addresses `0` to `127` are allocated for instruction memory and the remaining ad
   beq x5, x0, 4
   beq x0, x0, -8
 ```
-### Storing value into x0, lw and sw with negative immediate and lw/sw memory consistency check:
+### Attempting to store value into register x0, lw and sw with negative immediate and lw/sw memory consistency check:
 ``` assembly
   addi x0, x0, 5
   addi x1, x0, 200
@@ -66,7 +66,7 @@ If you would like to input your own instruction sequence for testing:
      
      end
      ```
-5. If a lw instruction is being executed, set necessary data memory values in addresses `128` - `255`
+5. If a lw instruction is being executed, must set the necessary data memory values in addresses `128` - `255`
  - For example, setting address `200` to decimal `100` would look like:
     ``` verilog
      initial begin
@@ -74,7 +74,7 @@ If you would like to input your own instruction sequence for testing:
     
        data[200] = 8'd100;
    
-    end
+     end
  - If you are hardcoding data that is greater than one byte, you can set up to four data memory addresses to contain all of the bits in little endian order as memory is byte addressable
   - For example, writing `0x12345678` into data memory starting from address `216` would look like:
       ``` verilog
@@ -87,9 +87,10 @@ If you would like to input your own instruction sequence for testing:
        data[219] = 8'h12;
       
       end
+     ```
    - The memory module will then concatenate all 4 addresses into one full word if called
 
-6. Repeat the same memory initialization into the ```reset``` block using non-blocking ``` <= ``` assignments after the ```for```loop
+6. Repeat the same memory initialization in the ```reset``` block using non-blocking ``` <= ``` assignments after the ```for```loop
    - For example, encoding the instructions and data above into the ``` reset``` block would look like:
    ``` verilog
     if(reset)
