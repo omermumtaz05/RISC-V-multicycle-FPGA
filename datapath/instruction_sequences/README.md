@@ -9,7 +9,7 @@ The sequences were used to fully test and verify:
  - Negative immediate values
  - x0 consistently storing 32'b0
 
-Addresses `0` - `127` are allocated for instruction memory and the remaining addresses `128` - `255` are allocated for data memory, allowing us to have a total of 32 instructions in one sequence as memory is byte addressable.
+Addresses `0`-`127` are allocated for instruction memory and the remaining addresses `128`-`255` are allocated for data memory, allowing us to have a total of 32 instructions in one sequence as memory is byte addressable.
 
 ## Instruction Sequences Used for Testing:
  ### All R-type, branching when equal, lw, and sw:
@@ -66,7 +66,7 @@ If you would like to input your own instruction sequence for testing:
      
      end
      ```
-5. If a lw instruction is being executed, must set the necessary data memory values in addresses `128` - `255`.
+5. If a lw instruction is being executed, you must set the necessary data memory values in addresses `128` - `255`.
  - For example, setting address `200` to decimal `100` would look like:
     ``` verilog
      initial begin
@@ -75,6 +75,7 @@ If you would like to input your own instruction sequence for testing:
        data[200] = 8'd100;
    
      end
+    ```
  - If you are hardcoding data that is greater than one byte, you can set up to four data memory addresses to contain all of the bits in little endian order as memory is byte addressable.
   - For example, writing `0x12345678` into data memory starting from address `216` would look like:
       ``` verilog
@@ -91,7 +92,7 @@ If you would like to input your own instruction sequence for testing:
    - The memory module will then concatenate all 4 addresses into one full word if called.
 
 6. Repeat the same memory initialization in the `reset` block using non-blocking ` <= ` assignments after the `for` loop.
-   - For example, encoding the instructions and data above into the ` reset` block would look like:
+   - For example, encoding the instructions and data above into the `reset` block would look like:
    ``` verilog
     if(reset)
     begin
