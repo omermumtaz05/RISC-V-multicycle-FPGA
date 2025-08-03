@@ -1,5 +1,5 @@
 Welcome!
-This directory contains three different ```memory_instr_seq*.v``` that contain different hardcoded instruction sequences into a standard memory module. 
+This directory contains three ```memory_instr_seq*.v``` modules that contain different hardcoded instruction sequences into a standard memory module. 
 
 For testing and simulation, the memory module in a full_datapath file should  be replaced with a memory module with desired instructions and data hardcoded.
 
