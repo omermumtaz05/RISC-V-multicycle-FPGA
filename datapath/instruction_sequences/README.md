@@ -1,7 +1,7 @@
 Welcome!
 This directory contains three ```memory_instr_seq*.v``` modules that contain different hardcoded instruction sequences into a standard memory module. 
 
-## Instruction Sequences used:
+## Instruction Sequences Used:
  ### 1.
 ``` assembly
   addi x3, x0, 20
