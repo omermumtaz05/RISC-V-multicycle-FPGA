@@ -111,10 +111,11 @@ If you would like to input your own instruction sequence for testing:
    
    ```
      
-8. Copy and paste this into a new ```full_dp_instr_seq*.v```file replacing the previous memory module
-9. Simulate the full_dp file on ModelSIM along with:
+7. Copy and paste this into a new ```full_dp_instr_seq*.v```file replacing the previous memory module
+8. Simulate the full_dp file on ModelSIM along with:
  - ```full_control.v```
  - ```top.v```
  - ```top_tb.v```
+
 
 More instructions on full simulation can be found in the ```testbenches/``` directory. 
