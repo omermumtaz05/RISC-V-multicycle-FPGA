@@ -13,11 +13,10 @@ module register(
 
     reg [31:0] RF [31:0]; // 32 registers each carrying 32 bits of data each
 
-  
+    integer i;
     always @ (posedge clk)
       if(reset)
         begin
-        integer i;
   		
         for (i = 0; i < 32;  i = i + 1)
           RF[i] = 32'b0;
@@ -32,11 +31,5 @@ module register(
             readData1 = RF[readReg1];
             readData2 = RF[readReg2];
         end
-  
-
-
-
 
 endmodule
-
-//VERIFY
