@@ -3,38 +3,38 @@ This directory contains three ```memory_instr_seq*.v``` modules that contain dif
 
 The sequences were used to fully test and verify:
  - Branch if equal (`beq`) with equal and unequal cases
- - `addi` instructions
+ - Add immediate instruction (`addi`)
  - Memory instructions (`lw` and `sw`) and checking memory consistency
  - R-type instructions (`add`, `sub`, `and`, `or`)
  - Negative immediate values
  - x0 consistently storing 32'b0
 
-Addresses 0 to 127 are allocated for instruction memory and the remaning addresses 128 - 255 are allocated for data memory, allowing us to have a total of 32 instructions in one sequence as memory is byte addressable.
+Addresses `0` to `127` are allocated for instruction memory and the remaining addresses `128` - `255` are allocated for data memory, allowing us to have a total of 32 instructions in one sequence as memory is byte addressable.
 
 ## Instruction Sequences Used for Testing:
- ### 1.
+ ### All R-type, branching when equal, lw, and sw:
 ``` assembly
   addi x3, x0, 20
   lw x8, 120(x3)
   add x10, x3, x8
   sub x11, x10, x8
   beq x3, x11, 8
-  *Unused address to be ignored during  branching*
-  *Unused address to be ignored during  branching*
+  //Unused address to be ignored during  branching
+  //Unused address to be ignored during  branching
   and x13, x8, x3
   or x14, x8, x3
   sw x3, 150(x0)
  ```
-  - Decimal value 82 was hardcoded into address 140
+  - Decimal value `82` was hardcoded into address `140`
   
-### 2:
+### Branching with not equal case and negative immediate loop:
 ``` assembly
   addi x5, x0, 4
   addi x5, x0, -1
   beq x5, x0, 4
   beq x0, x0, -8
 ```
-### 3:
+### Storing value into x0, lw and sw with negative immediate and lw/sw memory consistency check:
 ``` assembly
   addi x0, x0, 5
   addi x1, x0, 200
@@ -43,7 +43,7 @@ Addresses 0 to 127 are allocated for instruction memory and the remaning address
   sw x3, -20(x1)
   lw x4, -20(x1)
 ```
-  - Hex value 87 was hardcoded into address 150
+  - Hex value `87` was hardcoded into address `150`
 
 ## Writing your own instruction sequence
 
@@ -54,7 +54,7 @@ If you would like to input your own instruction sequence for testing:
 2. Enter desired instruction
 3. Copy hex or binary machine code
 4. In a new memory module, ```memory_instr_seq*.v```, copy and paste the standard memory module and write the instruction machine code in the ```initial begin ... end``` block
- - Use little endian byte order and only use addresses 0 - 127
+ - Use little endian byte order and only use addresses `0` - `127`
  - For example, encoding hex 0x00528333 into the first four addresses would look like:
      ``` verilog
      initial begin
@@ -66,8 +66,8 @@ If you would like to input your own instruction sequence for testing:
      
      end
      ```
-5. If a lw instruction is being executed, set necessary data memory values in addresses 128 - 255
- - For example, setting address 200 to decimal 100 would look like:
+5. If a lw instruction is being executed, set necessary data memory values in addresses `128` - `255`
+ - For example, setting address `200` to decimal `100` would look like:
     ``` verilog
      initial begin
        //Instructions
@@ -75,8 +75,8 @@ If you would like to input your own instruction sequence for testing:
        data[200] = 8'd100;
    
     end
- - If you are hardcoding data that is greater than one byte, you can set up to four data memory addresses to contain the all of bits in little endian order as memory is byte addressable
-  - For example, writing 0x12345678 into data memory starting from address 216 would look like:
+ - If you are hardcoding data that is greater than one byte, you can set up to four data memory addresses to contain all of the bits in little endian order as memory is byte addressable
+  - For example, writing `0x12345678` into data memory starting from address `216` would look like:
       ``` verilog
       initial begin
        //instruction encoding and possible other data
