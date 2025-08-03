@@ -15,7 +15,7 @@ This directory contains three ```memory_instr_seq*.v``` modules that contain dif
   or x14, x8, x3
   sw x3, 150(x0)
  ```
-  With decimal value 82 hardcoded into address 140
+  - Decimal value 82 was hardcoded into address 140
   
 ### 2:
 ``` assembly
@@ -33,7 +33,7 @@ This directory contains three ```memory_instr_seq*.v``` modules that contain dif
   sw x3, -20(x1)
   lw x4, -20(x1)
 ```
-  With hex value 87 hardcoded into address 150
+  - Hex value 87 was hardcoded into address 150
 
 ## Writing your own instruction sequence
 
