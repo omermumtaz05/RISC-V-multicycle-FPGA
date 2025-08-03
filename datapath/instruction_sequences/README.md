@@ -9,7 +9,7 @@ The sequences were used to fully test and verify:
  - Negative immediate values
  - x0 consistently storing 32'b0
 
-Addresses `0`-`127` are allocated for instruction memory and the remaining addresses `128`-`255` are allocated for data memory, allowing us to have a total of 32 instructions in one sequence as memory is byte addressable.
+Addresses `0`-`127` are allocated for instruction memory and the remaining addresses `128`-`255` are allocated for data memory, allowing us to have a maximum of 32 instructions in one sequence as memory is byte addressable.
 
 ## Instruction Sequences Used for Testing:
  ### All R-type, branching when equal, lw, and sw:
