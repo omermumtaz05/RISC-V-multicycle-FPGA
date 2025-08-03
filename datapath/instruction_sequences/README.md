@@ -69,7 +69,7 @@ If you would like to input your own instruction sequence for testing:
        data[200] = 8'd100;
    
     end
- - Because memory is byte addressable, setting addresses to any value greater than 1 byte would require you to set the remaining 4 addresses to contain remaining bits
+ - If you are hardcoding data that is greater than one byte, you can set up to four data memory addresses to contain the all of bits in little endian order as memory is byte addressable
   - For example, writing 0x12345678 into data memory starting from address 216 would look like:
       ``` verilog
       initial begin
@@ -79,15 +79,36 @@ If you would like to input your own instruction sequence for testing:
        data[217] = 8'h56;
        data[218] = 8'h34;
        data[219] = 8'h12;
-
-       // ...
+      
       end
-   - Memory module will then concatenate all 4 addresses into one full word if called
+   - The memory module will then concatenate all 4 addresses into one full word if called
 
 6. Repeat the same memory initialization into the ```reset``` block using non-blocking ``` <= ``` assignments after the ```for```loop
-7. Copy and paste this into a new ```full_dp_instr_seq*.v```file with only changing the memory module
-8. Simulate the full_dp file on ModelSIM along with:
- - full_control.v
- - top.v
- - top_tb.v
+   - For example, encoding the instructions and data above into the ``` reset``` block would look like:
+   ``` verilog
+    if(reset)
+    begin
+     //for loop
 
+      data[0] <= 8'h33; 
+      data[1] <= 8'h83;
+      data[2] <= 8'h52;
+      data[3] <= 8'h00;
+   
+      data[200] <= 8'd100;
+
+      data[216] <= 8'h78;
+      data[217] <= 8'h56;
+      data[218] <= 8'h34;
+      data[219] <= 8'h12;
+    end
+   
+   ```
+     
+8. Copy and paste this into a new ```full_dp_instr_seq*.v```file replacing the previous memory module
+9. Simulate the full_dp file on ModelSIM along with:
+ - ```full_control.v```
+ - ```top.v```
+ - ```top_tb.v```
+
+More instructions on full simulation can be found in the ```testbenches/``` directory. 
