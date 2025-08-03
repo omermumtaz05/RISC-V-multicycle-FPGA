@@ -1,6 +1,8 @@
 Welcome!
 This directory contains three ```memory_instr_seq*.v``` modules that contain different hardcoded instruction sequences into a standard memory module. 
 
+The sequences were used to fully test and verify beq, lw, sw, and all r-type instructions, along with negative immediate values, x0 consistently storing 32'b0, beq when registers are not equal, and sw/lw memory consistency.
+
 ## Instruction Sequences Used for Testing:
  ### 1.
 ``` assembly
