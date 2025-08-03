@@ -27,6 +27,3 @@ module imm_gen(
         endcase
 
 endmodule
-
-//VERIFY AND EDIT
-//FINISH SIGN EXTENDING
