@@ -64,11 +64,10 @@ If you would like to input your own instruction sequence for testing:
  - For example, setting address 200 to decimal 100 would look like:
     ``` verilog
      initial begin
-       //Instruction encoding from addresses 0 - 127 
-
-       data[200] = 8'd100;
+       //Instructions
     
-       // ...
+       data[200] = 8'd100;
+   
     end
  - Because memory is byte addressable, setting addresses to any value greater than 1 byte would require you to set the remaining 4 addresses to contain remaining bits
   - For example, writing 0x12345678 into data memory starting from address 216 would look like:
