@@ -1,7 +1,7 @@
 Welcome!
 This directory contains three ```memory_instr_seq*.v``` modules that contain different hardcoded instruction sequences into a standard memory module. 
 
-For testing and simulation, the memory module in a full_datapath file should  be replaced with a memory module with desired instructions and data hardcoded.
+For testing and simulation, the memory module in a ```full_dp_instr_seq*.v``` file should  be replaced with a memory module with desired instructions and data hardcoded.
 
 ## Instruction Sequences:
  ### 1.
