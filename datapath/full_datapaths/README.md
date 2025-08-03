@@ -6,6 +6,6 @@ For full testing with any one of these datapaths, the desired `full_dp_instr_seq
 along with:
   - `full_control.v`
   - `top.v`
-  - `top_tb.v`
+  - `top_tb.v` which the module to simulate.
 
 More instructions on simulating can be found in the 'testbenches/' directory.
