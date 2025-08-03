@@ -1,4 +1,3 @@
-// Code your design here
 module memory(
     input [31:0]address,
     input [31:0]writeData,
@@ -11,13 +10,15 @@ module memory(
 
     reg [7:0] data [255:0];
 
+    integer i;
     always @ (posedge clk)
     begin
        if(reset)
        begin
-         	integer i;
-         	for(i = 0; i < 256; i = i + 1)
-                data[i] <= 8'b0;
+         	
+         	for(i = 128; i < 256; i = i + 1)
+                	data[i] <= 8'b0;
+
        end
 
        else if(memWrite)
@@ -37,5 +38,3 @@ module memory(
 
 
 endmodule
-
-//VERIFY AGAIN
