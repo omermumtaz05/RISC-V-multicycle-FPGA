@@ -1,7 +1,13 @@
 Welcome!
 This directory contains three ```memory_instr_seq*.v``` modules that contain different hardcoded instruction sequences into a standard memory module. 
 
-The sequences were used to fully test and verify beq, lw, sw, and all r-type instructions, along with negative immediate values, x0 consistently storing 32'b0, beq when registers are not equal, and sw/lw memory consistency.
+The sequences were used to fully test and verify:
+ - Branch if equal (`beq`) with equal and unequal cases
+ - `addi` instructions
+ - Memory instructions (`lw` and `sw`) and checking memory consistency
+ - R-type instructions (`add`, `sub`, `and`, `or`)
+ - Negative immediate values
+ - x0 consistently storing 32'b0
 
 Addresses 0 to 127 are allocated for instruction memory and the remaning addresses 128 - 255 are allocated for data memory, allowing us to have a total of 32 instructions in one sequence as memory is byte addressable.
 
