@@ -92,7 +92,7 @@ If you would like to input your own instruction sequence for testing:
    - The memory module will then concatenate all 4 addresses into one full word if called.
 
 6. Repeat the same memory initialization in the `reset` block using non-blocking ` <= ` assignments after the `for` loop.
-   - For example, encoding the instructions and data above into the `reset` block would look like:
+ - For example, encoding the instructions and data above into the `reset` block would look like:
    ``` verilog
     if(reset)
     begin
