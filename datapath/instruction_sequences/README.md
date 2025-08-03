@@ -50,11 +50,11 @@ Addresses `0` to `127` are allocated for instruction memory and the remaining ad
 Instruction encoding was done with the help of https://luplab.gitlab.io/rvcodecjs/
 
 If you would like to input your own instruction sequence for testing:
-1. Go to the website https://luplab.gitlab.io/rvcodecjs
-2. Enter desired instruction
-3. Copy hex or binary machine code
-4. In a new memory module, ```memory_instr_seq*.v```, copy and paste the standard memory module and write the instruction machine code in the ```initial begin ... end``` block
- - Use little endian byte order and only use addresses `0` - `127`
+1. Go to the website https://luplab.gitlab.io/rvcodecjs.
+2. Enter desired instruction.
+3. Copy hex or binary machine code.
+4. In a new memory module, ```memory_instr_seq*.v```, copy and paste the standard memory module and write the instruction machine code in the ```initial begin ... end``` block.
+ - Use little endian byte order and only use addresses `0` - `127`.
  - For example, encoding hex 0x00528333 into the first four addresses would look like:
      ``` verilog
      initial begin
@@ -66,7 +66,7 @@ If you would like to input your own instruction sequence for testing:
      
      end
      ```
-5. If a lw instruction is being executed, must set the necessary data memory values in addresses `128` - `255`
+5. If a lw instruction is being executed, must set the necessary data memory values in addresses `128` - `255`.
  - For example, setting address `200` to decimal `100` would look like:
     ``` verilog
      initial begin
@@ -75,7 +75,7 @@ If you would like to input your own instruction sequence for testing:
        data[200] = 8'd100;
    
      end
- - If you are hardcoding data that is greater than one byte, you can set up to four data memory addresses to contain all of the bits in little endian order as memory is byte addressable
+ - If you are hardcoding data that is greater than one byte, you can set up to four data memory addresses to contain all of the bits in little endian order as memory is byte addressable.
   - For example, writing `0x12345678` into data memory starting from address `216` would look like:
       ``` verilog
       initial begin
@@ -88,9 +88,9 @@ If you would like to input your own instruction sequence for testing:
       
       end
      ```
-   - The memory module will then concatenate all 4 addresses into one full word if called
+   - The memory module will then concatenate all 4 addresses into one full word if called.
 
-6. Repeat the same memory initialization in the ```reset``` block using non-blocking ``` <= ``` assignments after the ```for```loop
+6. Repeat the same memory initialization in the ```reset``` block using non-blocking ``` <= ``` assignments after the ```for```loop.
    - For example, encoding the instructions and data above into the ``` reset``` block would look like:
    ``` verilog
     if(reset)
@@ -112,7 +112,7 @@ If you would like to input your own instruction sequence for testing:
    
    ```
      
-7. Copy and paste this into a new ```full_dp_instr_seq*.v```file replacing the previous memory module
+7. Copy and paste this into a new ```full_dp_instr_seq*.v```file replacing the previous memory module.
 8. Simulate the full_dp file on ModelSIM along with:
  - ```full_control.v```
  - ```top.v```
