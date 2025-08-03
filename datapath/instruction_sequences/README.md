@@ -47,9 +47,9 @@ If you would like to input your own instruction sequence for testing:
 1. Go to the website https://luplab.gitlab.io/rvcodecjs
 2. Enter desired instruction
 3. Copy hex or binary machine code
-4. In a new memory module, ```memory_instr_seq*.v```, copy and paste the standard memory module and write the instruction machine code in the initial begin ... end block
- - Use little endian byte order and only use addresses 0 - 127 as they
- - For example, encoding hex 0x00528333 would look like
+4. In a new memory module, ```memory_instr_seq*.v```, copy and paste the standard memory module and write the instruction machine code in the ```initial begin ... end``` block
+ - Use little endian byte order and only use addresses 0 - 127
+ - For example, encoding hex 0x00528333 into the first four addresses would look like:
      ``` verilog
      initial begin
      
@@ -58,7 +58,6 @@ If you would like to input your own instruction sequence for testing:
       data[2] = 8'h52;
       data[3] = 8'h00; //msb
      
-     //...
      end
      ```
 5. If a lw instruction is being executed, set necessary data memory values in addresses 128 - 255
