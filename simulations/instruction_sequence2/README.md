@@ -1,4 +1,4 @@
-This directory contains images from the simulation of instruction seqeuence 2
+**This directory contains images from the simulation of instruction seqeuence 2**
 
 Each image shows the outputs of necessary registers after each instruction being executed.
 
@@ -7,11 +7,18 @@ This instruction sequence performs a loop which roughly looks like the following
 ``` C
   int x = 5;
 
-  while(x != 0)
+  while(x != 0){
     x--;
-
+  }
 ```
-  
+
+The instruction sequence is as follows:
+``` assembly
+  addi x5, x0, 4
+  addi x5, x0, -1
+  beq x5, x0, 4
+  beq x0, x0, -8
+```
 
 Decrement images show the value of register x5 after each loop back and decrement.
 
