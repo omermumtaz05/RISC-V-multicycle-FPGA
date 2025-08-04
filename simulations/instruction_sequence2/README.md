@@ -29,6 +29,6 @@ Decrement images show the value of register x5 after each loop back and decremen
 
 Loop-back images show how PC branches back to beginning of decrement instruction to perform `addi x5, x5, -1`.
 
-Condition check images show how PC changes after branch condition is fulfilled or not fulfilled.
+Condition check images show how PC changes after branch condition is fulfilled or not fulfilled:
   - During loop (when x5 ≠ 0), branch not taken.
   - At the end of the loop (x5 == x0), branch taken, skipping the loop-back beq instruction.
