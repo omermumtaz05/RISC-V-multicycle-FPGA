@@ -1,4 +1,4 @@
-**This directory contains images from the simulation of Instruction Seqeuence 2**
+**This directory contains images from the simulation of Instruction Sequence 2**
 
 Each image shows the outputs of necessary registers after each instruction is executed.
 
@@ -22,13 +22,13 @@ The instruction sequence is as follows:
   beq x0, x0, -8 # unconditional jump back to loop
 
   exit:
-    #continue
+    # continue
 ```
 
 Decrement images show the value of register x5 after each loop back and decrement.
 
-Loop back images show how PC branches back to beginning of decrement instruction to perform `addi x5, x5, -1`.
+Loop-back images show how PC branches back to beginning of decrement instruction to perform `addi x5, x5, -1`.
 
 Condition check images show how PC changes after branch condition is fulfilled or not fulfilled.
-  - During loop (when x5 ≠ x0), branch not taken.
+  - During loop (when x5 ≠ 0), branch not taken.
   - At the end of the loop (x5 == x0), branch taken, skipping the loop-back beq instruction.
