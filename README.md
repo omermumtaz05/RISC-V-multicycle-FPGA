@@ -1,6 +1,6 @@
 This repository contains the Verilog code for the datapath and control for a 32-bit multicycle RISC-V processor, along with corresponding testbenches for verification.
 
-- `datapath/`: Contains three `full_dp_instr_seq*.v` files with all datapath modules, different instruction sequences and instructions on how to write your own instruction sequence.
+- `datapath/`: Contains all datapath modules along with different instruction sequences and instructions on how to write your own instruction sequence.
 - `control/`: Contains the FSM and ALU control modules.
 - `testbenches/`: Contains testbenches for individual modules and full CPU simulation.
 
