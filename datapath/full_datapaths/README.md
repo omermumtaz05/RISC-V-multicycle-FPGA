@@ -8,4 +8,3 @@ along with:
   - `top.v`
   - `top_tb.v` which is the module to simulate.
 
-More instructions on simulating can be found in the 'testbenches/' directory.
