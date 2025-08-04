@@ -4,7 +4,7 @@ This repository contains the Verilog code for the datapath and control for a 32-
 - `control/`: Contains the FSM and ALU control modules.
 - `testbenches/`: Contains testbenches for individual modules and full CPU simulation.
 
-For simulation, you will need a simulator like Icarus Verilog or ModelSim.
+ModelSim can be used for full simulation, however Icarus Verilog can be used for testing individual modules with their corresponding testbenches.
 
 The `top_tb.v` file is the file to be simulated, along with `top.v`, `full_control.v`, and `full_dp_instr_seq*.v` depending on which instruction sequence you wish to simulate.
 
