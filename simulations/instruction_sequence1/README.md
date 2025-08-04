@@ -2,7 +2,7 @@ This directory contains images of the ModelSim simulation of instruction sequenc
 
 The simulations show the necessary register and memory outputs after each instruction execution to verify the instruction's proper execution.
 
-## Instruction Sequences Used for Testing:
+## Instruction Sequence Used for Testing:
 ``` assembly
   addi x3, x0, 20
   lw x8, 120(x3)
