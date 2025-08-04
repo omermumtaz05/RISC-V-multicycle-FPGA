@@ -6,7 +6,7 @@ This repository contains the Verilog code for the datapath and control for a 32-
 
 ModelSim can be used for full simulation, however Icarus Verilog can be used for testing individual modules with their corresponding testbenches.
 
-The `top_tb.v` file is the file to be simulated, along with `top.v`, `full_control.v`, and `full_dp_instr_seq*.v` depending on which instruction sequence you wish to simulate.
+For full CPU simulation, the `top_tb.v` file is the file to be simulated, along with `top.v`, `full_control.v`, and `full_dp_instr_seq*.v` depending on which instruction sequence you wish to simulate.
 
 Details on how to write your own instruction sequences can be found in `datapath/instruction_sequences`.
 
