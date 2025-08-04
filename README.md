@@ -1,4 +1,6 @@
-RISC V 32-bit multicycle processor. Capable of running beq, lw, sw, addi, and all r-type instructions. Verified fully with negative immediates on lw, sw, addi, and beq, x0 only storing 32'b0, beq not branching when two registers not equal, and memory consistency with storing a word into an address and loading it directly into a register right after.
+Welcome! This repository has the Verilog code for the datapath and control for a 32-bit multicycle RISC-V processor, along with testbenches for verification.
+
+The processor has been fully verified for all instruction types (R-type, lw, sw, beq, and addi), along with negative immediate values, attempting to store values into x0 and lw/sw memory consistency. More details on instruction sequences can be found in the directory datapath/instruction sequences.
 
 <img width="850" height="742" alt="image" src="https://github.com/user-attachments/assets/14a16767-7ccf-4a3f-a271-d985df8ae3e4" />
 
