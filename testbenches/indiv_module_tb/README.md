@@ -1,4 +1,4 @@
-This directory contains testbenches for all individual datapath and control module.
+**This directory contains testbenches for all individual datapath and control module.**
 
 Each module's corresponding testbench file is named using the format `*_tb.v`.
 
