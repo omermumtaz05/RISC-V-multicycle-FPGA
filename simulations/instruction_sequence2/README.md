@@ -17,11 +17,12 @@ The instruction sequence is as follows:
   addi x5, x0, 4 #x5 = 5
 
   loop:
-  addi x5, x0, -1
-  beq x5, x0, 4  # jump to exit
-  beq x0, x0, -8
+  addi x5, x5, -1 #x5 = x5 - 1
+  beq x5, x0, 4  # if x5 == x0, jump to exit
+  beq x0, x0, -8 # unconditional jump back to loop
 
   exit:
+    #continue
 ```
 
 Decrement images show the value of register x5 after each loop back and decrement.
