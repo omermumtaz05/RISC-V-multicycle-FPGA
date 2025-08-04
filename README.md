@@ -1,6 +1,6 @@
 This repository contains the Verilog code for the datapath and control for a 32-bit multicycle RISC-V processor, along with corresponding testbenches for verification.
 
-The datapath and control implemented is based on the multicycle design from the book *Computer Organization and Design: RISC-V, 2nd Edition* with changes maed to the FSM to support `addi` instructions.
+The datapath and control implemented is based on the multicycle design from the book *Computer Organization and Design: RISC-V, 2nd Edition* with changes made to the FSM to support `addi` instructions.
 
 - `datapath/`: Contains all datapath modules along with different instruction sequences and instructions on how to write your own instruction sequence.
 - `control/`: Contains the FSM and ALU control modules.
