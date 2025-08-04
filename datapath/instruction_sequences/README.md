@@ -42,8 +42,10 @@ Addresses `0`-`127` are allocated for instruction memory and the remaining addre
   addi x3, x0, 99
   sw x3, -20(x1)
   lw x4, -20(x1)
+  lw x5, 0(x1)
 ```
   - Hex value `87` was hardcoded into address `150`
+  - Hex value `0x12345678` was hardcoded into addresses 200 - 203
 
 ## Writing your own instruction sequence
 
