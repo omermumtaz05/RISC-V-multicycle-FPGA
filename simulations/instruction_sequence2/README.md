@@ -14,10 +14,14 @@ This instruction sequence performs a loop which roughly looks like the following
 
 The instruction sequence is as follows:
 ``` assembly
-  addi x5, x0, 4
+  addi x5, x0, 4 #x5 = 5
+
+  loop:
   addi x5, x0, -1
-  beq x5, x0, 4
+  beq x5, x0, 4  # jump to exit
   beq x0, x0, -8
+
+  exit:
 ```
 
 Decrement images show the value of register x5 after each loop back and decrement.
