@@ -14,7 +14,7 @@ This instruction sequence performs a loop which roughly looks like the following
 
 The instruction sequence is as follows:
 ``` assembly
-  addi x5, x0, 4 #x5 = 5
+  addi x5, x0, 4 #x5 = 4
 
   loop:
   addi x5, x5, -1 #x5 = x5 - 1
