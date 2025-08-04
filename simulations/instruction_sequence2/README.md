@@ -5,7 +5,7 @@ Each image shows the outputs of necessary registers after each instruction is ex
 This instruction sequence performs a loop which roughly looks like the following:
 
 ``` C
-  int x = 5;
+  int x = 4;
 
   while(x != 0){
     x--;
