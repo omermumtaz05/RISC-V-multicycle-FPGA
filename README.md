@@ -8,7 +8,7 @@ For simulation, you will need a simulator like Icarus Verilog or ModelSim.
 
 The `top_tb.v` file is the file to be simulated, along with `top.v`, `full_control.v`, and `full_dp_instr_seq*.v` depending on which instruction sequence you wish to simulate.
 
-Details on how to write your own instruction sequences can be found in `RISC-V-multicycle-FPGA/datapath/instruction_sequences`
+Details on how to write your own instruction sequences can be found in `datapath/instruction_sequences`
 
 <img width="850" height="742" alt="image" src="https://github.com/user-attachments/assets/14a16767-7ccf-4a3f-a271-d985df8ae3e4" />
 
