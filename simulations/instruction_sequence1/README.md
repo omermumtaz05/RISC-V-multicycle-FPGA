@@ -1,6 +1,15 @@
-This directory contains images of the ModelSim simulation of instruction sequence 1. 
+**This directory contains images of the ModelSim simulation of Instruction Sequence 1.**
 
-The simulations show the necessary register and memory outputs after each instruction execution to verify the instruction's proper execution.
+What is being observed:
+ - Register x3
+ - Register x8
+ - Register x10
+ - Register x11
+ - Register x13
+ - Register x14
+ - Data memory address 140
+ - Data memory address 150
+ - PC for instruction address
 
 ## Instruction Sequence Used for Testing:
 ``` assembly
