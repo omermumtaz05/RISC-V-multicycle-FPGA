@@ -12,7 +12,7 @@
  - `PC` value to check instruction memory address and ensure correct branching
 
 ## What is Being Verified:
- - `addi` with a positive immediate valye
+ - `addi` with a positive immediate value
  - `lw` with a positive immediate value
  - `sw` with a positive immediate value
  - `add`
