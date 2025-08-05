@@ -1,13 +1,15 @@
 **This directory contains images from the simulation of Instruction Sequence 2**
 
-What is being observed for verification:
+## What is being observed for verification:
  - Register x5
  - PC value to ensure branching is correct
 
-This instruction sequence is used to verify `addi` with negative immediates, branching with negative immediates, and branching when the equal condition is not met.
+## This Instruction Sequence is used to Verify:
+ - `addi` with a negative immediate value
+ - `beq` with a negative immediate value
+ - `beq` with unequal condition
 
-Additionally, this sequence performs a loop which roughly looks like the following:
-
+## Rough C Equivalent of Instruction Sequence
 ``` C
   int x = 4;
 
@@ -16,7 +18,7 @@ Additionally, this sequence performs a loop which roughly looks like the followi
   }
 ```
 
-The instruction sequence is as follows:
+## The instruction Sequence in Assembly is:
 ``` assembly
   addi x5, x0, 4 #x5 = 4
 
@@ -29,6 +31,7 @@ The instruction sequence is as follows:
     # continue
 ```
 
+## Description of images:
 Decrement images show the value of register x5 after each loop back and decrement.
 
 Loop-back images show how PC branches back to beginning of decrement instruction to perform `addi x5, x5, -1`.
