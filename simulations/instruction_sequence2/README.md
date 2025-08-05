@@ -9,7 +9,7 @@
  - `beq` with a negative immediate value
  - `beq` with unequal condition
 
-## Rough C Equivalent of Instruction Sequence
+## Rough C Equivalent of Instruction Sequence:
 ``` C
   int x = 4;
 
