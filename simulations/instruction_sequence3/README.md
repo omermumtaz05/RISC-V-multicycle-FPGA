@@ -13,10 +13,10 @@
 - `PC` value to check instruction memory address
 
 ## What is Being Verified:
-- x0 always storing 0 regardless of values being added into it.
-- lw and sw with negative immediate values.
-- sw and lw memory consistency (does lw load the data in the address that was just stored by sw).
-- lw loading a full concatenated word from 4 data memory addresses into a register.
+- `x0` always storing `0` regardless of values being added into it.
+- `lw` and `sw` with negative immediate values.
+- `sw` and `lw` memory consistency (does `lw` load the data in the address that was just stored by `sw`).
+- `lw` loading a full concatenated word from four data memory addresses into a register.
 
 ## Instruction Sequence Used for Testing:
 ``` assembly
