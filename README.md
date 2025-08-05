@@ -4,6 +4,7 @@ The datapath and control implemented is based on the multicycle design from the 
 
 - `datapath/`: Contains all datapath modules along with different instruction sequences and instructions on how to write your own instruction sequence.
 - `control/`: Contains the FSM and ALU control modules.
+- `simulations/`: Contains images of the ModelSim simulations of the instruction sequences for full verification.
 - `testbenches/`: Contains testbenches for individual modules and full CPU simulation.
 
 ModelSim can be used for full simulation, however Icarus Verilog can be used for testing individual modules with their corresponding testbenches.
