@@ -116,10 +116,10 @@ If you would like to input your own instruction sequence for testing:
    ```
      
 7. Copy and paste this into a new `full_dp_instr_seq*.v` file replacing the previous memory module.
-8. Simulate the full_dp file on ModelSIM along with:
+8. Copy the full_dp file onto a new project in ModelSIM along with:
  -  `full_control.v`
  -  `top.v`
- -  `top_tb.v` (the file to simulate)
+ -  `top_tb.v` which is the file to simulate
 
 
 
