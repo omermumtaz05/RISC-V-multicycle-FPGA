@@ -1,15 +1,25 @@
 **This directory contains images of the ModelSim simulation of Instruction Sequence 1.**
 
 What is being observed for verification:
- - Register x3
- - Register x8
- - Register x10
- - Register x11
- - Register x13
- - Register x14
- - Data memory address 140
- - Data memory address 150
- - PC for instruction address
+ - Register `x3`
+ - Register `x8`
+ - Register `x10`
+ - Register `x11`
+ - Register `x13`
+ - Register `x14`
+ - Data memory address `140`
+ - Data memory address `150`
+ - `PC` value to check instruction memory address and ensure correct branching
+
+This instruction sequence is used to verify:
+ - `addi` with a positive immediate valye
+ - `lw` with a positive immediate value
+ - `sw` with a positive immediate value
+ - `add`
+ - `sub`
+ - `and`
+ - `or`
+ - `beq` with a positive immediate value
 
 ## Instruction Sequence Used for Testing:
 ``` assembly
