@@ -119,7 +119,7 @@ If you would like to input your own instruction sequence for testing:
 8. Simulate the full_dp file on ModelSIM along with:
  -  `full_control.v`
  -  `top.v`
- -  `top_tb.v`
+ -  `top_tb.v` (the file to simulate)
 
 
-More instructions on full simulation can be found in the `testbenches/` directory. 
+
