@@ -5,5 +5,5 @@ This directory contains three directories:
 
 Which correspond with the instruction sequences found in the `datapath/instruction_sequences` directory
 
-Each directory has images from ModelSim simulations which observe the behavior of the necessary registers and data memory addresses after each instruction for full CPU verification
+Each directory has images from ModelSim simulations which observe the behavior of the necessary registers and data memory addresses after each instruction for full CPU verification.
 
