@@ -29,3 +29,5 @@ This instruction sequence was used to verify:
 - lw and sw with negative immediate values.
 - sw and lw memory consistency (does lw load the data in the address that was just stored by sw).
 - lw loading a full concatenated word from 4 data memory addresses into a register.
+
+Each image shows the values of the appropriate registers and data memory addresses on ModelSim.
