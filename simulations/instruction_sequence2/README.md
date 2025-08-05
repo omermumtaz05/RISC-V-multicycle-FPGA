@@ -18,7 +18,7 @@
   }
 ```
 
-## The instruction Sequence in Assembly is:
+## Instruction Sequence in Assembly:
 ``` assembly
   addi x5, x0, 4 #x5 = 4
 
@@ -31,7 +31,7 @@
     # continue
 ```
 
-## Description of images:
+## Description of Images:
 Decrement images show the value of register x5 after each loop back and decrement.
 
 Loop-back images show how PC branches back to beginning of decrement instruction to perform `addi x5, x5, -1`.
