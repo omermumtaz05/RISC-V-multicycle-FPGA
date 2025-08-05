@@ -1,8 +1,12 @@
 **This directory contains images from the simulation of Instruction Sequence 2**
 
-Each image shows the outputs of necessary registers after each instruction is executed.
+What is being observed for verification:
+ - Register x5
+ - PC value to ensure branching is correct
 
-This instruction sequence performs a loop which roughly looks like the following:
+This instruction sequence is used to verify `addi` with negative immediates, branching with negative immediates, and branching when the equal condition is not met.
+
+Additionally, this sequence performs a loop which roughly looks like the following:
 
 ``` C
   int x = 4;
