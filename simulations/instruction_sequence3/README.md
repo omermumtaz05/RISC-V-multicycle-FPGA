@@ -1,6 +1,6 @@
-This directory contains the simulation results of Instruction Sequence 3
+**This directory contains the ModelSim simulation results of Instruction Sequence 3**
 
-The registers and data memory addresses being observed after each instruction are:
+## What is Being Observed for Verification:
 - Register `x0`
 - Register `x1`
 - Register `x2`
@@ -10,8 +10,15 @@ The registers and data memory addresses being observed after each instruction ar
 - Address `150`
 - Address `180`
 - Addresses `200`-`203`
+- `PC` value to check instruction memory address
 
-Instruction sequence:
+## What is Being Verified:
+- x0 always storing 0 regardless of values being added into it.
+- lw and sw with negative immediate values.
+- sw and lw memory consistency (does lw load the data in the address that was just stored by sw).
+- lw loading a full concatenated word from 4 data memory addresses into a register.
+
+## Instruction Sequence Used for Testing:
 ``` assembly
   addi x0, x0, 5
   addi x1, x0, 200
@@ -24,10 +31,3 @@ Instruction sequence:
   - Hex value `87` was hardcoded into address `150`
   - Hex value `0x87654321` was hardcoded into addresses `200`-`203`
 
-This instruction sequence was used to verify:
-- x0 always storing 0 regardless of values being added into it.
-- lw and sw with negative immediate values.
-- sw and lw memory consistency (does lw load the data in the address that was just stored by sw).
-- lw loading a full concatenated word from 4 data memory addresses into a register.
-
-Each image shows the values of the appropriate registers and data memory addresses on ModelSim.
