@@ -1,6 +1,6 @@
 **This directory contains images of the ModelSim simulation of Instruction Sequence 1.**
 
-What is being observed:
+What is being observed for verification:
  - Register x3
  - Register x8
  - Register x10
