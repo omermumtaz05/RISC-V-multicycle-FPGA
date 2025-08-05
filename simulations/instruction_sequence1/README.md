@@ -1,6 +1,6 @@
 **This directory contains images of the ModelSim simulation of Instruction Sequence 1.**
 
-## What is being observed for verification:
+## What is Being Observed for Verification:
  - Register `x3`
  - Register `x8`
  - Register `x10`
@@ -11,7 +11,7 @@
  - Data memory address `150`
  - `PC` value to check instruction memory address and ensure correct branching
 
-## What is being verified:
+## What is Being Verified:
  - `addi` with a positive immediate valye
  - `lw` with a positive immediate value
  - `sw` with a positive immediate value
